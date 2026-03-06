@@ -1,8 +1,11 @@
-# Python competitive programming problems and solutions
+# Competitive programming problems and solutions in Python
+
+Competitive programming problems and solution implementations in Python from the most popular websites.
+All scripts and solutions are modified to write unit tests.
+
+## Requirements
 
 Python version: 3.13.3
-
-Competitive programming problems and solution in Python from the most popular websites.
 
 ## Create virtual env
 
@@ -36,6 +39,15 @@ or
 
 .venv/bin/python -m pytest
 
-## Clear pycache dirs
+## Clear pycache directories
+
+If you need to clear all temp __pycache__ directories:
 
 find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
+
+## Platforms
+
+* [Codechef](https://www.codechef.com)
+* [Codeforces](https://codeforces.com)
+* [Codility](https://www.codility.com)
+* [Leetcode](https://www.leetcode.com)
