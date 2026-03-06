@@ -1,5 +1,18 @@
 """
+Binary Tree Longest Consecutive Sequence
 
+You are given the root of a binary tree. Your task is to find the length of the longest consecutive sequence path in the tree.
+
+A consecutive sequence path is defined as a path where each node's value is exactly one more than its parent node's value in the path. For example, a path with values 1 → 2 → 3 is a consecutive sequence.
+
+Key constraints to note:
+
+The path can start at any node in the tree (not necessarily the root)
+The path must follow parent-to-child connections only (you cannot traverse from a child back to its parent)
+The values must increase by exactly 1 at each step along the path
+For example, if you have a tree where a parent node has value 5, only a child with value 6 would continue the consecutive sequence. A child with value 7 or 4 would start a new sequence.
+
+The function should return an integer representing the maximum length of any consecutive sequence path found in the tree.
 """
 
 class BinaryTreeLongestConsecutiveSequence:

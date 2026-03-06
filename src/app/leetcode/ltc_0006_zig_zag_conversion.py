@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/zigzag-conversion/
+ZigZag Conversion | https://leetcode.com/problems/zigzag-conversion/
 
 The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
@@ -34,13 +34,6 @@ Constraints:
     s consists of English letters (lower-case and upper-case), ',' and '.'.
     1 <= numRows <= 1000
 
-
-Binary tree zigzag level order traversal | leetcode 103 | https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal
-
-Use flag to keep track of reversed levels; O(n) because worst case is full level - n/2 elements
-
-Definition for a binary tree node.
-
 """
 
 class TreeNode:
@@ -51,10 +44,8 @@ class TreeNode:
 
 class ZigZagConversion:
     def convert(self, s, numRows):
-        # https://leetcode.com/discuss/90908/easy-python-o-n-solution-94%25-with-explanations
         if numRows == 1:
             return s
-        # calculate period
         p = 2 * (numRows - 1)
         result = [""] * numRows
         for i in range(len(s)):

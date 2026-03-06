@@ -39,11 +39,17 @@ or
 
 .venv/bin/python -m pytest
 
-## Clear pycache directories
+## Clear the development environment
 
 If you need to clear all temp __pycache__ directories:
 
+### Clear pycache directories
+
 find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
+
+### Remove venv
+
+rm .env
 
 ## Platforms
 

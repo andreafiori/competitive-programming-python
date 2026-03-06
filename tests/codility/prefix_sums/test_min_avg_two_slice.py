@@ -1,21 +1,21 @@
-import unittest
 import random
 
 from app.codility.prefix_sums.min_avg_two_slice import MinAvgTwoSlice
 
-class MinAvgTwoSliceTest(unittest.TestCase):
-    def setUp(self) -> None:
+class TestMinAvgTwoSlice:
+
+    def setup_class(self):
         self.min_avg_two_slice = MinAvgTwoSlice()
 
     def test_example(self):
-        self.assertEqual(self.min_avg_two_slice.solution([4, 2, 2, 5, 1, 5, 8]), 1)
-        self.assertEqual(self.min_avg_two_slice.solution([5, 2, 2, 100, 1, 1, 100]), 4)
-        self.assertEqual(self.min_avg_two_slice.solution([11, 2, 10, 1, 100, 2, 9, 2, 100]), 1)
+        assert self.min_avg_two_slice.solution([4, 2, 2, 5, 1, 5, 8]) == 1
+        assert self.min_avg_two_slice.solution([5, 2, 2, 100, 1, 1, 100]) == 4
+        assert self.min_avg_two_slice.solution([11, 2, 10, 1, 100, 2, 9, 2, 100]) == 1
 
     def test_three(self):
-        # self.assertEqual(self.min_avg_two_slice.solution([-3, -5, -8, -4, -10]), 2)
-        # self.assertEqual(self.min_avg_two_slice.solution([-8, -6, -10]), 0)
-        self.assertEqual(self.min_avg_two_slice.solution([1, -1, 1, -1]), 1)
+        # assert self.min_avg_two_slice.solution([-3, -5, -8, -4, -10]), 2)
+        # assert self.min_avg_two_slice.solution([-8, -6, -10]), 0)
+        assert self.min_avg_two_slice.solution([1, -1, 1, -1]) == 1
 
     def test_random(self):
         A = [random.randint(*self.min_avg_two_slice.RANGE_N) for _ in range(2, 10)]

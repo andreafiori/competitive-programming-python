@@ -1,6 +1,5 @@
 """
-294. Flip Game | https://leetcode.com/problems/flip-game/description/
-
+Flip Game | https://leetcode.com/problems/flip-game/
 
 """
 
