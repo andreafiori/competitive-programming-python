@@ -1,12 +1,13 @@
 """
-Unique binary search trees | leetcode 96 | https://leetcode.com/problems/unique-binary-search-trees/
-method: dp, use cached results for subtrees of all possible roots
+Unique binary search trees  | https://leetcode.com/problems/unique-binary-search-trees/
+
+Method: dp, use cached results for subtrees of all possible roots
 
 https://leetcode.com/discuss/86650/fantastic-clean-java-dp-solution-with-detail-explaination
 
 """
 
-class UniqueBinarySearchTrees
+class UniqueBinarySearchTrees:
     def numTrees(self, n):
         """
         :type n: int

@@ -1,6 +1,6 @@
-from app.common.tree_node import TreeNode
+from common.tree_node import TreeNode
 
-class Solution:
+class ConstructBinaryTreeFromInorderAndPostorderTraversal:
     def buildTree(self, inorder: list[int], postorder: list[int]) -> TreeNode:
         """
         :type inorder: List[int]

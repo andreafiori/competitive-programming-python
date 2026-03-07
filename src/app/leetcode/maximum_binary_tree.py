@@ -1,15 +1,10 @@
 """
+Minimum Binary Tree | https://leetcode.com/problems/maximum-binary-tree/
 
 """
 
 from typing import List
-
-class TreeNode
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
+from common.tree_node import TreeNode
 
 class MaxBinaryTree
     def constructMaxBinaryTree(self, nums: List[int]):

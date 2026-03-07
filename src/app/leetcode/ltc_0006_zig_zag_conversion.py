@@ -36,14 +36,8 @@ Constraints:
 
 """
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
 class ZigZagConversion:
-    def convert(self, s, numRows):
+    def convert(self, s: str, numRows: int) -> str:
         if numRows == 1:
             return s
         p = 2 * (numRows - 1)

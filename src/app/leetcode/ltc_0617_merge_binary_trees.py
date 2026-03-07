@@ -5,11 +5,7 @@ Method: merge current, then merge left and right
 
 """
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from common.tree_node import TreeNode
 
 class Solution:
     def mergeTrees(self, root1, root2):

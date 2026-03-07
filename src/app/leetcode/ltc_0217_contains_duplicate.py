@@ -1,4 +1,10 @@
+"""
+Contains Duplicate | https://leetcode.com/problems/contains-duplicate/
+
+"""
+
 class ContainesDuplicate:
+
     def containsDuplicate(self, nums):
         """
         :type nums: List[int]

@@ -1,24 +1,13 @@
-# Definition for a binary tree node.
-# class TreeNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+Sum of Left Leaves | https://leetcode.com/problems/sum-of-left-leaves/
 
-class Solution:
-    # def sumOfLeftLeaves(self, root):
-    #     """
-    #     :type root: TreeNode
-    #     :rtype: int
-    #     """
-    #     if root is None:
-    #         return 0
-    #     if root.left is not None:
-    #         if root.left.left is None and root.left.right is None:
-    #             return root.left.val + self.sumOfLeftLeaves(root.right)
-    #     return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)
+"""
 
-    def sumOfLeftLeaves(self, root):
+from common.tree_node import TreeNode
+
+class SumOfLeftLeaves:
+
+    def sumOfLeftLeaves(self, root: TreeNode) -> int:
         stack = [root]
         res = 0
         while len(stack) > 0:

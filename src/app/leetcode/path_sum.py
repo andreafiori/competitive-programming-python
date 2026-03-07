@@ -1,12 +1,12 @@
-# Definition for a binary tree node.
-# class TreeNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+Path Sum | https://leetcode.com/problems/path-sum/
 
-class Solution:
-    def hasPathSum(self, root, sum):
+"""
+
+from common.tree_node import TreeNode
+
+class PathSum:
+    def hasPathSum(self, root: TreeNode, sum: int) -> bool:
         """
         :type root: TreeNode
         :type sum: int

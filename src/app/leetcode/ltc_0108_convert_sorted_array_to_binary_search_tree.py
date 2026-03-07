@@ -1,19 +1,10 @@
+"""
+Convert Sorted Array to Binary Search Tree | https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+"""
+
 from app.common.tree_node import TreeNode
 
-class Solution:
-    # def sortedArrayToBST(self, nums):
-    #     """
-    #     :type nums: List[int]
-    #     :rtype: TreeNode
-    #     """
-    #     # Recursion with slicing
-    #     if not nums:
-    #         return None
-    #     mid = len(nums) / 2
-    #     root = TreeNode(nums[mid])
-    #     root.left = self.sortedArrayToBST(nums[:mid])
-    #     root.right = self.sortedArrayToBST(nums[mid + 1:])
-    #     return root
+class ConvertSortedArrayToBinarySearchTree:
 
     def sortedArrayToBST(self, nums):
         # Recursion with index

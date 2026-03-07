@@ -5,13 +5,9 @@ Method: dfs, update size and sum of subtree at each node and check for average
 
 """
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from common.tree_node import TreeNode
 
-class Solution:
+class CountNodesEqualToAverageOfSubtree:
     def averageOfSubtree(self, root: list[TreeNode]) -> int:
         self.counter = 0
         def dfs(node):

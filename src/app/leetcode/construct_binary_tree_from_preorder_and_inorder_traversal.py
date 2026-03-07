@@ -1,11 +1,6 @@
-# Bnary tree node
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from common.tree_node import TreeNode
 
-class Solution:
+class ConstructBinaryTreeFromPreorderAndInorderTraversal:
     def buildTree(self, preorder, inorder):
         n = len(inorder)
         inOrderMap = {inorder[i]: i for i in range(n)}

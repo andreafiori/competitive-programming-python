@@ -4,21 +4,16 @@ method: node, left subtree, right subtree recursively
 
 """
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from common.tree_node import TreeNode
 
 class BinaryTreePreordertraversal:
-    def inorderTraversal(self, root: TreeNode):
+    def preorderTraversal(self, root: TreeNode):
         travList = []
         self.traverse(root, travList)
         return travList
 
     # Traverse right subtree and add nodes
-    def traverse(self,root, travList):
+    def traverse(self, root: TreeNode, travList: list):
         if root is None:
             return None
 

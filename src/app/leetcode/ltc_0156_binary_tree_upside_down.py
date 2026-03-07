@@ -1,15 +1,18 @@
-class Solution:
-    # p.left = parent.right
-    # parent.right = p.right
-    # p.right = parent
-    # parent = p.left
-    # p = left
-    def upside_down_binary_tree(self, root):
+"""
+Binary Tree Upside Down | https://leetcode.com/problems/binary-tree-upside-down/
+
+
+"""
+
+from common.tree_node import TreeNode
+
+class BinaryTreeNode(TreeNode):
+
+    def upside_down_binary_tree(self, root: TreeNode) -> TreeNode:
         """
         :type root: TreeNode
         :rtype: TreeNode
         """
-        # top-down
         node, parent, parent_right = root, None, None
         while node is not None:
             left = node.left

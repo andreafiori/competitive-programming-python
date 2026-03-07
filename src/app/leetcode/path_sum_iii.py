@@ -1,31 +1,12 @@
-# Definition for a binary tree node.
-# class TreeNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+Path Sum III | https://leetcode.com/problems/path-sum-iii/
 
+https://leetcode.com/problems/path-sum-iii/discuss/91892/Python-solution-with-detailed-explanation
+"""
 
-# https://leetcode.com/problems/path-sum-iii/discuss/91892/Python-solution-with-detailed-explanation
-class Solution:
-    # def find_paths(self, root, target):
-    #     if root:
-    #         return int(root.val == target)
-    #         + self.find_paths(root.left, target - root.val)
-    #         + self.find_paths(root.right, target - root.val)
-    #     return 0
+from common.tree_node import TreeNode
 
-    # def pathSum(self, root, sum):
-    #     """
-    #     :type root: TreeNode
-    #     :type sum: int
-    #     :rtype: int
-    #     """
-    #     if root:
-    #         return self.find_paths(root, sum)
-    #         + self.pathSum(root.left, sum)
-    #         + self.pathSum(root.right, sum)
-    #     return 0
+class PathSumIII:
 
     def pathSumHelper(self, root, target, so_far, cache):
         if root:
@@ -40,7 +21,7 @@ class Solution:
             cache[so_far + root.val] -= 1
         return
 
-    def pathSum(self, root, sum):
+    def pathSum(self, root: TreeNode, sum: int) -> int:
         """
         :type root: TreeNode
         :type sum: int

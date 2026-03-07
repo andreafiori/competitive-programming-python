@@ -22,18 +22,14 @@ Constraints:
     -100 <= Node.val <= 100
 
 """
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
 
+from common.tree_node import TreeNode
 class InvertBinaryTree:
-    def invertTree(self, root):
+    def invertTree(self, root: TreeNode) -> TreeNode:
         self._dfs(root)
         return root
 
-    def _dfs(self, root):
+    def _dfs(self, root: TreeNode):
             if root is None:
                 return
 

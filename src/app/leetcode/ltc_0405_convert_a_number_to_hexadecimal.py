@@ -1,5 +1,9 @@
+"""
+Convert a Number to Hexadecimal | https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 
-class Solution:
+"""
+
+class ConvertANumberToHexadecimal(object):
     def toHex(self, num):
         """
         :type num: int

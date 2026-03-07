@@ -1,15 +1,15 @@
-# lowest common ancestor in binary search tree | leetcode 235 | https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
-# method: iteration through each node, when p and q are in different subtrees, current node is LCA
+"""
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+lowest common ancestor in binary search tree | https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
-class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+Method: iteration through each node, when p and q are in different subtrees, current node is LCA
+
+"""
+
+from common.tree_node import TreeNode
+
+class LowestCommonAncestor:
+    def find(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         cur = root
         
         while cur:

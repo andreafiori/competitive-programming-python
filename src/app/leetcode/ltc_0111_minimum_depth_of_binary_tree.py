@@ -1,28 +1,13 @@
-# Definition for a binary tree node.
-# class TreeNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+Minimum Depth of Binary Tree | https://leetcode.com/problems/minimum-depth-of-binary-tree/
 
-class Solution:
-    # def minDepth(self, root):
-    #     """
-    #     :type root: TreeNode
-    #     :rtype: int
-    #     """
-    #     # Recursion
-    #     if root is None:
-    #         return 0
-    #     ld = self.minDepth(root.left)
-    #     rd = self.minDepth(root.right)
-    #     if ld != 0 and rd != 0:
-    #         # handle 0 case!
-    #         return 1 + min(ld, rd)
-    #     return 1 + ld +rd
+"""
 
-    def minDepth(self, root):
-        # BFS
+from common.tree_node import TreeNode
+
+class MinimumDepthOfBinaryTree:
+
+    def minDepth(self, root: TreeNode) -> int:
         if root is None:
             return 0
         queue = [root]
@@ -43,4 +28,3 @@ class Solution:
                 else:
                     rightMost = node.left
         return depth
-

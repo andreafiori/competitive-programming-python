@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/balanced-binary-tree/
+Balanced Binary Tree | https://leetcode.com/problems/balanced-binary-tree/
 
 Given a binary tree, determine if it is height-balanced.
 
@@ -30,14 +30,10 @@ Example 2:
 
 """
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from common.tree_node import TreeNode
 
 class BalancedBinaryTree:
-    def isBalanced(self, root):
+    def isBalanced(self, root: TreeNode) -> bool:
         """
         :type root: TreeNode
         :rtype: bool
@@ -67,17 +63,3 @@ class BalancedBinaryTree:
             return -1
         else:
             return max(ld, rd) + 1
-
-    # https://discuss.leetcode.com/topic/7798/the-bottom-up-o-n-solution-would-be-better
-    # def isBalanced(self, root):
-    #     # Top-down recursion
-    #     if root is None:
-    #         return True
-    #     left = self.depth(root.left)
-    #     right = self.depth(root.right)
-    #     return abs(left - right) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
-
-    # def depth(self, root):
-    #     if root is None:
-    #         return 0
-    #     return max(self.depth(root.left), self.depth(root.right)) + 1

@@ -1,12 +1,12 @@
-# Definition for a binary tree node.
-# class TreeNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+Sum Root to Leaf Numbers | https://leetcode.com/problems/sum-root-to-leaf-numbers/
 
-class Solution:
-    def sumNumbers(self, root):
+"""
+
+from common.tree_node import TreeNode
+
+class SumRootToLeafNumbers:
+    def sumNumbers(self, root: TreeNode) -> int:
         """
         :type root: TreeNode
         :rtype: int

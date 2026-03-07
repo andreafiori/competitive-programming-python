@@ -1,11 +1,11 @@
-# Definition for a binary tree node.
-# class TreeNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+Unique Binary Search Trees II | https://leetcode.com/problems/unique-binary-search-trees-ii/
 
-class Solution:
+"""
+
+from common.tree_node import TreeNode
+
+class UniqueBinarySearchTreesII:
     def generateTrees(self, n):
         """
         :type n: int

@@ -6,13 +6,7 @@ Method: (dfs) in-order traversal and at each node, update path. if leaf, append 
 """
 
 from typing import Optional, List
-
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from common.tree_node import TreeNode
 
 class BinaryTreePath:
     def solution_one(self, root: Optional[TreeNode]) -> List[str]:

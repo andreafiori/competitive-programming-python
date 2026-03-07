@@ -7,11 +7,7 @@ Method: traverse through the original and the cloned tree parallely until the or
 
 """
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from common.tree_node import TreeNode
 
 class CorrespondingTargetInClonedTree:
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:

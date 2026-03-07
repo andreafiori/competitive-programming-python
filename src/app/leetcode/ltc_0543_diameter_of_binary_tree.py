@@ -24,14 +24,11 @@ https://leetcode.com/problems/diameter-of-binary-tree/solution/
 
 """
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from common.tree_node import TreeNode
 
-class Solution:
-    def diameterOfBinaryTree(self, root):
+class DiameterOfBinaryTree:
+
+    def find(self, root: TreeNode) -> int:
         self.ans = 1
         def depth(node):
             if not node: return 0
@@ -41,5 +38,4 @@ class Solution:
             return max(L, R) + 1
 
         depth(root)
-        # number of nodes - 1 = length
         return self.ans - 1

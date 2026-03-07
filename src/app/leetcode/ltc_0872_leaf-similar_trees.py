@@ -23,11 +23,7 @@ Constraints:
 
 """
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+
 
 class LeafSimilar:
     def solution(self, root1: TreeNode, root2: TreeNode) -> bool:

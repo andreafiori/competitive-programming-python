@@ -1,5 +1,5 @@
 """
-89. Gray Code | https://leetcode.com/problems/gray-code/
+Gray Code | https://leetcode.com/problems/gray-code/
 
 """
 

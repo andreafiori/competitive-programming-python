@@ -1,5 +1,5 @@
 """
-Balanced bst | leetcode 110 | https://leetcode.com/problems/balance-a-binary-search-tree/
+Balanced bst | https://leetcode.com/problems/balance-a-binary-search-tree/
 
 Given a bst, check if it is balanced or not
 
@@ -8,14 +8,10 @@ Method: for each subtree, check if its left and right subtrees and balanced, and
 """
 
 # Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from common.tree_node import TreeNode
 
 class Solution:
-    def isBalanced(self, root) -> bool:
+    def isBalanced(self, root: TreeNode) -> bool:
         def dfs(root):
             if root is None: return [True, 0]
 

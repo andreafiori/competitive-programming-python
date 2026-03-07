@@ -1,10 +1,10 @@
 """
+Closest Binary Search Tree Value | https://leetcode.com/problems/closest-binary-search-tree-value/
 
 """
 
 class ClosestBinarySearchTreeValue:
     def closest_value(self, root, target):
-        # compare kids' result with root
         kid = root.left if target < root.val else root.right
         if not kid:
             return root.val

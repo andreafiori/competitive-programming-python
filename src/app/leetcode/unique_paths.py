@@ -1,5 +1,11 @@
-class Solution:
-    def uniquePaths(self, m, n):
+"""
+Unique Paths | https://leetcode.com/problems/unique-paths/
+
+"""
+
+class UniquePaths:
+
+    def uniquePaths(self, m: int, n: int) -> int:
         """
         :type m: int
         :type n: int

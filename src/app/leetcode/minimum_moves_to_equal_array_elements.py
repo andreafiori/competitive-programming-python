@@ -1,9 +1,10 @@
 """
+Minimum Moves to Equal Array Elements | https://leetcode.com/problems/minimum-moves-to-equal-array-elements/
 
 """
 
 class MinimumMovesToEqualArrayElements:
-    def minMoves(self, nums):
+    def minMoves(self, nums: List[int]) -> int:
         """
         :type nums: List[int]
         :rtype: int

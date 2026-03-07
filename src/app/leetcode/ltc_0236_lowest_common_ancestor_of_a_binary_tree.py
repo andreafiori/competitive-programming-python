@@ -28,11 +28,7 @@ Constraints:
 
 """
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from common.tree_node import TreeNode
 
 class LowestCommonAncestor:
     def solution_one(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
