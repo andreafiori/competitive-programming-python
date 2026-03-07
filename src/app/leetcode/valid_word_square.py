@@ -1,10 +1,10 @@
 """
-https://discuss.leetcode.com/topic/63423/1-liner-python/2
+Valid Word Square | https://leetcode.com/problems/valid-word-square/
 
 """
 
 class ValidWordSquare:
-    def solution(self, words):
+    def solution(self, words: list) -> bool:
         """
         :type words: List[str]
         :rtype: bool
@@ -21,7 +21,3 @@ class ValidWordSquare:
                 if words[i][j] != words[j][i]:
                     return False
         return True
-
-    # def validWordSquare(self, words):
-    #     # The map(None, ...) transposes the "matrix", filling missing spots with None
-    #     return map(None, *words) == map(None, *map(None, *words))

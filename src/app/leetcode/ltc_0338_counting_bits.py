@@ -1,5 +1,9 @@
+"""
+Counting Bits | https://leetcode.com/problems/counting-bits/
+"""
+
 class CountingBits:
-    def countBits(self, num):
+    def countBits(self, num: int):
         """
         :type num: int
         :rtype: List[int]

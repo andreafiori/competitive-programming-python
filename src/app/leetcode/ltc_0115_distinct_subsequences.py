@@ -1,11 +1,17 @@
-class Solution:
-    def numDistinct(self, s, t):
+"""
+Disiinct Subsequences | https://leetcode.com/problems/distinct-subsequences/
+
+https://discuss.leetcode.com/topic/51131/space-o-mn-and-o-n-python-solutions
+"""
+
+class DistinctSubsequences:
+
+    def numDistinct(self, s: str, t: str) -> int:
         """
         :type s: str
         :type t: str
         :rtype: int
         """
-        # https://discuss.leetcode.com/topic/51131/space-o-mn-and-o-n-python-solutions
         dp = [[0 for j in range(0, len(t) + 1)] for i in range(0, len(s) + 1)]
         for j in range(1, len(t) + 1):
             dp[0][j] = 0

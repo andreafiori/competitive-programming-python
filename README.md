@@ -14,11 +14,16 @@ A curated collection of competitive programming problems and solutions in Python
 python -m venv .venv
 ```
 
-Activate it:
+Activate on Windows:
 
-| Platform | Command |
-|---|---|
-| Windows | `.venv\Scripts\activate` |
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUse
+.venv\Scripts\activate.ps1
+```
+
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUse
+
 | macOS / Linux | `source .venv/bin/activate` |
 
 ### 2. Install dependencies
@@ -97,3 +102,7 @@ Contributions are welcome! When adding a new solution, please ensure:
 1. The solution is placed in the appropriate platform folder.
 2. A corresponding unit test is included.
 3. All existing tests pass before submitting.
+
+## Resources
+
+* [Leetcode main](https://github.com/doocs/leetcode/tree/main)
