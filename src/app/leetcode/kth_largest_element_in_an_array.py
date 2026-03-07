@@ -1,7 +1,11 @@
+"""
+Kth Largest Element in an Array | https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+"""
 
 import random
 
-class Solution:
+class KthLargestElementInAnArray:
     def findKthLargest(self, nums, k):
         # shuffle nums to avoid n*n
         random.shuffle(nums)

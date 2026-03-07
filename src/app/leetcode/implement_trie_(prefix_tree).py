@@ -1,5 +1,11 @@
-class TrieNode
-    # https://leetcode.com/articles/implement-trie-prefix-tree/#trie-node-structure
+"""
+Implement a trie with insert, search, and startsWith methods. | https://leetcode.com/problems/implement-trie-prefix-tree/description/
+
+https://leetcode.com/articles/implement-trie-prefix-tree/#trie-node-structure
+
+"""
+
+class TrieNode:
     def __init__(self):
         """
         Initialize your data structure here.
@@ -20,7 +26,7 @@ class TrieNode
         self.isEnd = True
 
 
-class Trie
+class Trie:
     def __init__(self):
         self.root = TrieNode()
 
@@ -68,9 +74,3 @@ class Trie
         """
         node = self.searchPrefix(prefix)
         return node is not None
-
-
-        # Your Trie object will be instantiated and called as such:
-        # trie = Trie()
-        # trie.insert("somestring")
-        # trie.search("key")

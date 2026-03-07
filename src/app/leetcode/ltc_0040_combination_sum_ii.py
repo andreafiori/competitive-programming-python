@@ -1,8 +1,10 @@
 """
+Combination Sum II | https://leetcode.com/problems/combination-sum-ii/
+
 """
 
 class CombinationSumII:
-    def combinationSum2(self, candidates, target):
+    def combinationSum2(self, candidates: list[int], target: int) -> list[list[int]]:
         """
         :type candidates: List[int]
         :type target: int

@@ -1,3 +1,9 @@
+"""
+Find K Pairs with Smallest Sums | https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
+
+Solution:https://discuss.leetcode.com/topic/50450/slow-1-liner-to-fast-solutions
+"""
+
 class FindKPairsWithSmallestSums:
     def kSmallestPairs(self, nums1, nums2, k):
         """
@@ -6,7 +12,6 @@ class FindKPairsWithSmallestSums:
         :type k: int
         :rtype: List[List[int]]
         """
-        # https://discuss.leetcode.com/topic/50450/slow-1-liner-to-fast-solutions
         queue = []
         def push(i, j):
             if i < len(nums1) and j < len(nums2):

@@ -1,3 +1,8 @@
+"""
+Insert Interval | https://leetcode.com/problems/insert-interval/description/
+
+"""
+
 from typing import List
 
 class Interval:
@@ -5,7 +10,7 @@ class Interval:
         self.start = s
         self.end = e
 
-class Solution:
+class InsertInterval:
     def insert(self, intervals: List[Interval], newInterval: List[Interval]) -> List[Interval]:
         """
         :type intervals: List[Interval]

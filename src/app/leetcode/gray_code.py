@@ -1,23 +1,16 @@
-class Solution:
-    def grayCode(self, n):
+"""
+89. Gray Code | https://leetcode.com/problems/gray-code/
+
+"""
+
+class GrayCode:
+    def solution(self, n: int) -> list[int]:
         """
         :type n: int
         :rtype: List[int]
         """
-        # https://leetcode.com/discuss/86617/6-line-java-solution-very-concise
         res = [0]
         for i in range(n):
             for j in reversed(range(len(res))):
                 res.append(res[j] + (1 << i))
         return res
-
-
-    # def count_one(self, num):
-    #     count = 0
-    #     while num:
-    #         num &= (num - 1)
-    #         count += 1
-    #     return count
-
-# s = Solution()
-# print( s.grayCode(2) )

@@ -1,6 +1,9 @@
 """
+Fruit Into Baskets | https://leetcode.com/problems/fruit-into-baskets/
+
 """
 
+from ast import List
 import collections
 
 class FruitIntoBaskets:
@@ -48,7 +51,7 @@ class FruitIntoBaskets:
     #             break
     #     return ans
 
-    def totalFruit(self, tree):
+    def totalFruit(self, tree: List[int]) -> int:
         ans = i = 0
         count = collections.Counter()
         for j, x in enumerate(tree):

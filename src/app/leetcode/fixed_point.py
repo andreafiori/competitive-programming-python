@@ -1,19 +1,9 @@
 """
+Fixed Point | https://leetcode.com/problems/fixed-point/
 
 """
 
 class FixedPoint:
-    # def fix(self, A):
-    #     """
-    #     :type A: List[int]
-    #     :rtype: int
-    #     """
-    #     for index, value in enumerate(A):
-    #         # Because if A[i] > i, then i can never be greater than A[i] any more
-    #         if index == value:
-    #             return index
-    #         elif index < value:
-    #             return -1
 
     def fix(self, A):
         l, h = 0, len(A) - 1

@@ -1,59 +1,109 @@
-# Competitive programming problems and solutions in Python
+# 🏆 Competitive Programming — Python Solutions
 
-Competitive programming problems and solution implementations in Python from the most popular websites.
-All scripts and solutions are modified to write unit tests.
+A curated collection of competitive programming problems and solutions in Python, sourced from the most popular platforms. Every solution is adapted with unit tests for easy verification and learning.
 
-## Requirements
+---
 
-Python version: 3.13.3
+## 📋 Requirements
 
-## Create virtual env
+- **Python**: 3.13.3
 
+---
+
+## 🚀 Getting Started
+
+### 1. Create a virtual environment
+
+```bash
 python -m venv .venv
+```
 
-Activate:
+Activate it:
 
-Windows:
-.venv\Scripts\activate
+| Platform | Command |
+|---|---|
+| Windows | `.venv\Scripts\activate` |
+| macOS / Linux | `source .venv/bin/activate` |
 
-MacOS/Linux
-source .venv/bin/activate
+### 2. Install dependencies
 
-## Install dependencies
-
+```bash
 pip install -e .
 pip install pytest
+```
 
-## Docker support
+---
 
-Alternatively, you can use Docker:
+## 🐳 Docker
 
+Prefer containers? Build and run tests with Docker:
+
+```bash
 docker build --target test -t myapp-test .
 docker run --rm myapp-test
+```
 
-## Run tests
+---
 
+## 🧪 Running Tests
+
+```bash
 pytest
+```
 
-or
+Or explicitly via the venv Python:
 
+```bash
 .venv/bin/python -m pytest
+```
 
-## Clear the development environment
+---
 
-If you need to clear all temp __pycache__ directories:
+## 🧹 Cleaning Up
 
-### Clear pycache directories
+Remove temporary files and the virtual environment:
 
+```bash
+# Clear all __pycache__ directories and compiled files
 find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
 
-### Remove venv
+# Remove the virtual environment
+rm -rf .venv
+```
 
-rm .env
+> ⚠️ Note: The cleanup command uses `rm -rf .venv` (not `rm .env`) to remove the virtual environment directory.
 
-## Platforms
+---
 
-* [Codechef](https://www.codechef.com)
-* [Codeforces](https://codeforces.com)
-* [Codility](https://www.codility.com)
-* [Leetcode](https://www.leetcode.com)
+## 🌐 Platforms
+
+Solutions are sourced from the following competitive programming platforms:
+
+| Platform | URL |
+|---|---|
+| CodeChef | [codechef.com](https://www.codechef.com) |
+| Codeforces | [codeforces.com](https://codeforces.com) |
+| Codility | [codility.com](https://www.codility.com) |
+| LeetCode | [leetcode.com](https://www.leetcode.com) |
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── solutions/        # Problem solutions organized by platform
+├── tests/            # Unit tests for each solution
+├── pyproject.toml    # Project metadata and dependencies
+└── Dockerfile        # Docker configuration
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! When adding a new solution, please ensure:
+
+1. The solution is placed in the appropriate platform folder.
+2. A corresponding unit test is included.
+3. All existing tests pass before submitting.

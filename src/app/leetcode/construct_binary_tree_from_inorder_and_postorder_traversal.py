@@ -1,12 +1,7 @@
-# Binary tree node definition
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from app.common.tree_node import TreeNode
 
 class Solution:
-    def buildTree(self, inorder, postorder):
+    def buildTree(self, inorder: list[int], postorder: list[int]) -> TreeNode:
         """
         :type inorder: List[int]
         :type postorder: List[int]
