@@ -2,13 +2,9 @@
 
 A curated collection of competitive programming problems and solutions in Python, sourced from the most popular platforms. Every solution is adapted with unit tests for easy verification and learning.
 
----
-
 ## 📋 Requirements
 
 - **Python**: 3.13.3
-
----
 
 ## 🚀 Getting Started
 
@@ -43,7 +39,6 @@ docker build --target test -t myapp-test .
 docker run --rm myapp-test
 ```
 
----
 
 ## 🧪 Running Tests
 
@@ -57,7 +52,6 @@ Or explicitly via the venv Python:
 .venv/bin/python -m pytest
 ```
 
----
 
 ## 🧹 Cleaning Up
 
@@ -73,7 +67,6 @@ rm -rf .venv
 
 > ⚠️ Note: The cleanup command uses `rm -rf .venv` (not `rm .env`) to remove the virtual environment directory.
 
----
 
 ## 🌐 Platforms
 
@@ -86,7 +79,6 @@ Solutions are sourced from the following competitive programming platforms:
 | Codility | [codility.com](https://www.codility.com) |
 | LeetCode | [leetcode.com](https://www.leetcode.com) |
 
----
 
 ## 📁 Project Structure
 
@@ -97,8 +89,6 @@ Solutions are sourced from the following competitive programming platforms:
 ├── pyproject.toml    # Project metadata and dependencies
 └── Dockerfile        # Docker configuration
 ```
-
----
 
 ## 🤝 Contributing
 
