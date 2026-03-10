@@ -1,9 +1,9 @@
 """
-605. Can Place Flowers | https://leetcode.com/problems/can-place-flowers/
+Can Place Flowers | https://leetcode.com/problems/can-place-flowers/
 """
 
 class CanPlaceFlowers:
-    def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
+    def place(self, flowerbed: list[int], n: int) -> bool:
         """
         :type flowerbed: List[int]
         :type n: int

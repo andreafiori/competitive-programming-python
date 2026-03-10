@@ -1,4 +1,9 @@
-class Solution:
+"""
+Ransom Note | https://leetcode.com/problems/ransom-note/description/
+"""
+class RansomNote:
+    """Ransom Note"""
+
     def canConstruct(self, ransomNote, magazine):
         """
         :type ransomNote: str
@@ -13,6 +18,3 @@ class Solution:
             if letter_map[letter] < 0:
                 return False
         return True
-
-    # def canConstruct(self, ransomNote, magazine):
-    #     return not collections.Counter(ransomNote) - collections.Counter(magazine)

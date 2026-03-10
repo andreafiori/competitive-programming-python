@@ -21,7 +21,6 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUse
 .venv\Scripts\activate.ps1
 ```
 
-
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUse
 
 | macOS / Linux | `source .venv/bin/activate` |
@@ -43,7 +42,6 @@ Prefer containers? Build and run tests with Docker:
 docker build --target test -t myapp-test .
 docker run --rm myapp-test
 ```
-
 
 ## 🧪 Running Tests
 

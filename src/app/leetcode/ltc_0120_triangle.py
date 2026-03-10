@@ -1,4 +1,9 @@
-class Solution:
+"""
+Triangle | https://leetcode.com/problems/triangle/
+"""
+class Triangle:
+    """ Time: O(n^2) Space: O(n) """
+
     def minimumTotal(self, triangle):
         """
         :type triangle: List[List[int]]

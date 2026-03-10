@@ -1,4 +1,7 @@
-class Solution:
+"""
+Rectangle Overlap | https://leetcode.com/problems/rectangle-overlap/
+"""
+class RectangleOverlap:
     def isRectangleOverlap(self, rec1, rec2):
         """
         :type rec1: List[int]

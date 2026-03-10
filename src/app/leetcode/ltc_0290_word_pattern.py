@@ -1,8 +1,11 @@
-# word pattern | leetcode 290 | https://leetcode.com/problems/word-pattern/
-# create a vocabulary to match pattern and a seen hashset to record seen words
+"""
+Word Pattern | https://leetcode.com/problems/word-pattern/
+"""
+class WordPattern:
+    """:type pattern: str"""
 
-class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
+        """ :type s: str :rtype: bool """
         vocab = dict()
         seens = dict()
         sent = s.split(" ")

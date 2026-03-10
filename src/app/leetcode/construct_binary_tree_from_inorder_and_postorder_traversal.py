@@ -17,8 +17,7 @@ class ConstructBinaryTreeFromInorderAndPostorderTraversal:
 
         root = TreeNode(postorder[pEnd])
         rootIdx = inOrderMap[root.val]
-        root.left = self.buildTreeUtil(inorder, postorder, inOrderMap, pStart, pStart + rootIdx - iStart - 1, iStart,
-                                       rootIdx - 1)
+        root.left = self.buildTreeUtil(inorder, postorder, inOrderMap, pStart, pStart + rootIdx - iStart - 1, iStart, rootIdx - 1)
         root.right = self.buildTreeUtil(inorder, postorder, inOrderMap, pStart + rootIdx - iStart, pEnd - 1, rootIdx + 1,
                                         iEnd)
         return root

@@ -1,5 +1,9 @@
-class Solution:
-    def computeArea(self, A, B, C, D, E, F, G, H):
+"""
+Rectangle Area | https://leetcode.com/problems/rectangle-area/
+"""
+class RectangleArea:
+
+    def computeArea(self, A: int, B: int, C: int, D: int, E: int, F: int, G: int, H: int):
         """
         :type A: int
         :type B: int

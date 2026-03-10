@@ -1,5 +1,10 @@
-class Solution:
-    def getModifiedArray(self, length, updates):
+"""
+Range Addition | https://leetcode.com/problems/range-addition/ #
+"""
+class RangeAddition:
+    """ Range Addition solutions"""
+
+    def getModifiedArray(self, length: int, updates: list[list[int]]) -> list[int]:
         """
         :type length: int
         :type updates: List[List[int]]

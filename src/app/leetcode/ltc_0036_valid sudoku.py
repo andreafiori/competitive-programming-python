@@ -1,13 +1,15 @@
+import collections
+
 """
-valid sudoku | leetcode 36 | https://leetcode.com/problems/valid-sudoku/
+valid sudoku | https://leetcode.com/problems/valid-sudoku/
 Determine if a n^2 x n^2 Psuedo-Sudoku board is valid.
 Only the filled cells need to be validated.
 """
+class ValidSudoku:
 
-import collections
-
-class Solution:
     def isValidSudoku(self, board):
+        """ Bit manipulation solution. O(n^2) time, O(n) space."""
+
         vset = [0] * 9
         hset = [0] * 9
         bset = [0] * 9
@@ -26,6 +28,7 @@ class Solution:
         return True
 
     def isValidSudoku(self, board: list[list[str]]) -> bool:
+        """ Hash set solution. O(n^2) time, O(n) space. """
         rows = collections.defaultdict(set)
         columns = collections.defaultdict(set)
         squares = collections.defaultdict(set)

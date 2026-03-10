@@ -1,10 +1,6 @@
-# Definition for singly-linked list.
-# class ListNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+from common.list_node import ListNode
 
-class Solution:
+class ReorderList:
     # def reorderList(self, head):
     #     """
     #     :type head: ListNode

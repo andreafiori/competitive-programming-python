@@ -1,8 +1,8 @@
+import sys
+
 """
 Recovery Binary Search Tree | https://leetcode.com/problems/recover-binary-search-tree/
-
 """
-
 from common.tree_node import TreeNode
 
 class RecoveryBinarySearchTree:
@@ -11,7 +11,6 @@ class RecoveryBinarySearchTree:
     def __init__(self):
         self.first = self.second = None
         self.pre = TreeNode(-sys.maxint - 1)
-
 
     def recoverTree(self, root):
         self.traverse(root)

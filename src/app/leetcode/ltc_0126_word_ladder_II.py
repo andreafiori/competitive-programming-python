@@ -1,9 +1,8 @@
-"""
-
-"""
-
 import string
 
+"""
+Word Ladder II | https://leetcode.com/problems/word-ladder-ii/
+"""
 class WordLadderII:
     # def findLadders(self, beginWord, endWord, wordlist):
     #     """
@@ -56,10 +55,10 @@ class WordLadderII:
 
 
     def findLadders(self, beginWord, endWord, wordlist):
-        # do not use single dfs or bfs, because both of them
-        # try to get result in single direction, which check lots
-        # of unnecessary branches
-        # https://leetcode.com/discuss/67716/my-30ms-bidirectional-bfs-and-dfs-based-java-solution
+        """
+        Do not use single dfs or bfs, because both of them
+        Try to get result in single direction, which check lots of unnecessary branches
+        """
         wordlist.discard(beginWord)
         wordlist.discard(endWord)
         hash_map, res = {}, []

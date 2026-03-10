@@ -1,12 +1,16 @@
-# product of array except self | leetcode 238 | https://leetcode.com/problems/product-of-array-except-self/
-# save prefixes to result array and apply postfix in reverse 
-# (since output array doesnt increase space complexity)
+"""
+Product of Array Except Self | https://leetcode.com/problems/product-of-array-except-self/
+"""
+class ProductOfArrayExceptSelf:
 
-class Solution:
-    def productExceptSelf(self, nums: list[int]) -> list[int]:
+    def product_except_one(self, nums: list[int]) -> list[int]:
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result = []
         N = len(nums)
-        
+
         # save prefix to result array
         product = 1
         for i in range(N):
@@ -21,4 +25,17 @@ class Solution:
         result[0] = postfix
 
         return result
-    
+
+    def product_except_two(self, nums: list[int]) -> list[int]:
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        ans = [1] * len(nums)
+        for i in range(1, len(nums)):
+            ans[i] = ans[i - 1] * nums[i - 1]
+        right = 1
+        for i in range(len(nums) - 1, -1, -1):
+            ans[i] *= right
+            right *= nums[i]
+        return ans

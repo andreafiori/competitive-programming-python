@@ -1,6 +1,5 @@
 """
-https://discuss.leetcode.com/topic/12997/11ms-c-solution-concise
-
+Word Break II | https://leetcode.com/problems/word-break-ii/
 """
 
 class WordBreakII:

@@ -1,5 +1,9 @@
-class NumArray
-    def __init__(self, nums):
+"""
+Range Sum Query - Immutable | https://leetcode.com/problems/range-sum-query-immutable/
+"""
+class RangeSumQueryImmutable:
+
+    def __init__(self, nums: list[int]) -> None:
         """
         initialize your data structure here.
         :type nums: List[int]
@@ -9,16 +13,11 @@ class NumArray
         for i in range(len(self.data)):
             self.res[i + 1] = self.res[i] + nums[i]
 
-    def sumRange(self, i, j):
+    def sumRange(self, i: int, j: int) -> int:
         """
-        sum of elements nums[i..j], inclusive.
+        Sum of elements nums[i..j], inclusive.
         :type i: int
         :type j: int
         :rtype: int
         """
         return self.res[j + 1] - self.res[i]
-
-        # Your NumArray object will be instantiated and called as such:
-        # numArray = NumArray(nums)
-        # numArray.sumRange(0, 1)
-        # numArray.sumRange(1, 2)

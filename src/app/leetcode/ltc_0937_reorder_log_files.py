@@ -1,4 +1,7 @@
-class Solution:
+"""
+Reorder Log Files | https://leetcode.com/problems/reorder-log-files/
+"""
+class ReorderLogFiles:
     # def reorderLogFiles(self, logs):
     #     """
     #     :type logs: List[str]
@@ -7,7 +10,6 @@ class Solution:
     #     def f(log):
     #         id_, rest = log.split(" ", 1)
     #         return (0, rest, id_) if rest[0].isalpha() else (1,)
-        
     #     # Python sort is stable, so digit with keep their order
     #     return sorted(logs, key = f)
 
@@ -20,4 +22,3 @@ class Solution:
             else:
                 letter_logs.append(log)
         return sorted(letter_logs, key=lambda x: x.split(' ')[1:] + x.split(' ')[0]) + digit_logs
-        
