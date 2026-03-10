@@ -46,4 +46,3 @@ class ReorderList:
             p1.next = p2
             p1 = p1.next
             p2 = temp
-

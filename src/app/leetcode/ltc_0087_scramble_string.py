@@ -1,32 +1,9 @@
-class Solution:
-    #https://discuss.leetcode.com/topic/20094/my-c-solutions-recursion-with-cache-dp-recursion-with-cache-and-pruning-with-explanation-4ms/2
-    # def isScramble(self, s1, s2):
-    #     """
-    #     :type s1: str
-    #     :type s2: str
-    #     :rtype: bool
-    #     """
-    #     # recursive
-    #     if s1 == s2:
-    #         return True
-    #     if len(s1) != len(s2):
-    #         return False
-    #     ls = len(s1)
-    #     letters = [0] * 26
-    #     for i in range(ls):
-    #         letters[ord(s1[i]) - ord('a')] += 1
-    #         letters[ord(s2[i]) - ord('a')] -= 1
-    #     for i in range(26):
-    #         if letters[i] != 0:
-    #             return False
-    #     for i in range(1, ls):
-    #         if self.isScramble(s1[0:i], s2[0:i]) and self.isScramble(s1[i:], s2[i:]):
-    #             return True
-    #         if self.isScramble(s1[0:i], s2[ls - i:]) and self.isScramble(s1[i:], s2[:ls - i]):
-    #             return True
-    #     return False
+"""
+. Scramble String | https://leetcode.com/problems/scramble-string/
+"""
+class ScrambleString:
 
-    def isScramble(self, s1, s2, memo={}):
+    def isScramble(self, s1: str, s2: str, memo={}):
         # recursive with memo
         # Check with sorted is fundamental, otherwise TLE
         if len(s1) != len(s2) or sorted(s1) != sorted(s2):

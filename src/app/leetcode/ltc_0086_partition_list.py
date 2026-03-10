@@ -1,11 +1,12 @@
-# Definition for singly-linked list.
-# class ListNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+from common.list_node import ListNode
 
-class Solution:
-    def partition(self, head, x):
+"""
+Partition List | https://leetcode.com/problems/partition-list/
+"""
+class PartitionList:
+    """ @param head: The first node of linked list"""
+
+    def partition(self, head: ListNode, x: int) -> ListNode:
         """
         :type head: ListNode
         :type x: int

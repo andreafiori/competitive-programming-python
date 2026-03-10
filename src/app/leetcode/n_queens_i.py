@@ -1,5 +1,9 @@
-class Solution:
-    def solveNQueens(self, n):
+"""
+N Queens | http://leetcode.com/problems/n-queens/
+"""
+class NQueens(object):
+
+    def solveNQueens(self, n: int):
         """
         :type n: int
         :rtype: List[List[str]]
@@ -12,7 +16,7 @@ class Solution:
         self.do_solveNQueens(res, board, n)
         return res
 
-    def do_solveNQueens(self, res, board, num):
+    def do_solveNQueens(self, res: list, board: list, num: int):
         if num == 0:
             res.append([''.join(t) for t in board])
             return
@@ -34,9 +38,3 @@ class Solution:
                 board[pos][j] = 'Q'
                 self.do_solveNQueens(res, board, num - 1)
                 board[pos][j] = '.'
-
-
-if __name__ == '__main__':
-    # begin
-    s = Solution()
-    print s.solveNQueens(4)

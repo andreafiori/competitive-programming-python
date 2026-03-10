@@ -1,10 +1,10 @@
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+from common.list_node import ListNode
 
-class Solution:
-    def reverseList1(self, head: ListNode) -> ListNode|None:
+"""
+. Reverse Linked List | https://leetcode.com/problems/reverse-linked-list/description/
+"""
+class RevereseLinkedList:
+    def reverse_list1(self, head: ListNode) -> ListNode|None:
         """
         :type head: ListNode
         :rtype: ListNode|None
@@ -26,7 +26,7 @@ class Solution:
                 stack.pop()
         return head
 
-    def reverseList2(self, head):
+    def reverse_list2(self, head: ListNode) -> ListNode|None:
         # recursively
         if head is None:
             return head
@@ -39,7 +39,7 @@ class Solution:
         self.do_reverse(stack, pre_head)
         return pre_head.next
 
-    def do_reverse(self, stack, curr_head):
+    def do_reverse(self, stack, curr_head: ListNode) -> None:
         if len(stack) == 0:
             curr_head.next = None
             return
@@ -48,7 +48,7 @@ class Solution:
         curr_head = node
         self.do_reverse(stack, curr_head)
 
-    def reverseList3(self, head):
+    def reverse_list3(self, head: ListNode) -> ListNode|None:
         # simple iteratively without extra space
         prev, curr = None, head
         while curr is not None:
@@ -58,7 +58,7 @@ class Solution:
             curr = next_temp
         return prev
 
-    def reverseList(self, head):
+    def reverse_list4(self, head: ListNode) -> ListNode|None:
         # recursion
         # simple recursively without extra space
         if head is None or head.next is None:

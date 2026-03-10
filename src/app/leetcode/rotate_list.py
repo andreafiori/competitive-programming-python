@@ -1,11 +1,8 @@
-# Definition for singly-linked list.
-# class ListNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+from common.list_node import ListNode
 
-class Solution:
-    def rotateRight(self, head, k):
+class RotateList(object):
+
+    def rotateRight(self, head: ListNode, k: int) -> ListNode:
         """
         :type head: ListNode
         :type k: int
@@ -31,7 +28,7 @@ class Solution:
                 slow = slow.next
             return self.rotate(head, fast, slow)
 
-    def rotate(self, head, fast, slow):
+    def rotate(self, head: ListNode, fast: ListNode, slow: ListNode) -> ListNode:
         fast.next = head
         head = slow.next
         slow.next = None

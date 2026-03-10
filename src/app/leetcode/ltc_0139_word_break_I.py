@@ -1,9 +1,8 @@
-"""
-
-"""
-
 from typing import Set
 
+"""
+Word Break | https://leetcode.com/problems/word-break/
+"""
 class WordBreak:
     def wordBreak(self, s: str, wordDict: Set[str]) -> bool:
         """

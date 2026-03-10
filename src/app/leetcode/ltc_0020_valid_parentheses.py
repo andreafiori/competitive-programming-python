@@ -1,4 +1,6 @@
 """
+Valid Parentheses | https://leetcode.com/problems/valid-parentheses/
+
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
@@ -6,12 +8,9 @@ An input string is valid if:
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 
-Question: https://leetcode.com/problems/valid-parentheses/
-
 """
-
-class Solution:
-    def solution_one(self, s):
+class ValidParentheses:
+    def solution_one(self, s: str) -> bool:
         """
         :type s: str
         :rtype: bool

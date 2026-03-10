@@ -1,5 +1,8 @@
-class ValidWordAbbr
-    def __init__(self, dictionary):
+"""
+Unique Word Abbreviation | https://leetcode.com/problems/unique-word-abbreviation/
+"""
+class UniqueWordAbbreviation:
+    def __init__(self, dictionary: list[str]):
         """
         initialize your data structure here.
         :type dictionary: List[str]
@@ -13,7 +16,7 @@ class ValidWordAbbr
             else:
                 self.abb_dic[curr] = True
 
-    def isUnique(self, word):
+    def isUnique(self, word: str) -> bool:
         """
         check if a word is unique.
         :type word: str
@@ -23,15 +26,7 @@ class ValidWordAbbr
         hasAbbr = self.abb_dic.get(abb, None)
         return hasAbbr == None or (hasAbbr and word in self.dictionary)
 
-
-    def getAbb(self, word):
+    def getAbb(self, word: str) -> str:
         if len(word) <= 2:
             return word
         return word[0] + str(len(word) - 2) + word[-1]
-
-
-
-        # Your ValidWordAbbr object will be instantiated and called as such:
-        # vwa = ValidWordAbbr(dictionary)
-        # vwa.isUnique("word")
-        # vwa.isUnique("anotherWord")

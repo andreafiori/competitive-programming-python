@@ -1,4 +1,7 @@
-class Solution:
+"""
+Search a 2D Matrix | https://leetcode.com/problems/search-a-2d-matrix/
+"""
+class SearchA2DMatrix(object):
     # def searchMatrix(self, matrix, target):
     #     """
     #     :type matrix: List[List[int]]
@@ -21,7 +24,6 @@ class Solution:
     #             begin = mid + 1
     #     return False
     #
-    #
     # def search_row(self, matrix, row, target):
     #     if target < matrix[row][0]:
     #         return -1
@@ -37,7 +39,6 @@ class Solution:
     #         else:
     #             end = mid - 1
     #     return 1
-
 
     def searchMatrix(self, matrix, target):
         # binary search
@@ -58,5 +59,3 @@ class Solution:
             else:
                 begin = mid + 1
         return False
-
-

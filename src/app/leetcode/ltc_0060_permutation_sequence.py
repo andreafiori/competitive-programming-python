@@ -1,5 +1,9 @@
-class Solution:
-    def getPermutation(self, n, k):
+"""
+Permutation Sequence | https://leetcode.com/problems/permutation-sequence/
+"""
+class PermutationSequence(object):
+
+    def getPermutation(self, n: int, k: int) -> str:
         """
         :type n: int
         :type k: int
@@ -16,8 +20,7 @@ class Solution:
         res = self.do_getPermutation(remain, total, n - 1, k - 1)
         return ''.join(str(t) for t in res)
 
-
-    def do_getPermutation(self, remain, curr, n, k):
+    def do_getPermutation(self, remain: list[int], curr: int, n: int, k: int) -> list[int]:
         if n == 0 or k <= 0 or curr == 0:
             return remain
         # which block
@@ -27,7 +30,3 @@ class Solution:
         curr /= n
         res = [remain[step]] + self.do_getPermutation(remain[:step] + remain[step + 1:], curr, n - 1, k)
         return res
-
-# if __name__ == '__main__':
-#     s = Solution()
-#     print(s.getPermutation(3, 2))

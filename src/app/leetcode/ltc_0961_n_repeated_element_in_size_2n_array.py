@@ -1,7 +1,10 @@
 import collections
 
+"""
+N-Repeated Element in Size 2N Array | https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
+"""
+class NRepeatedElementInSize2NArray(object):
 
-class Solution:
     def repeatedNTimes(self, A):
         """
         :type A: List[int]
@@ -9,10 +12,3 @@ class Solution:
         """
         counter = collections.Counter(A)
         return counter.most_common(1)[0][0]
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.repeatedNTimes([1, 2, 3, 3])
-    print s.repeatedNTimes([2, 1, 2, 5, 3, 2])
-    print s.repeatedNTimes([5, 1, 5, 2, 5, 3, 5, 4])

@@ -1,8 +1,7 @@
 """
 Valid Word Square | https://leetcode.com/problems/valid-word-square/
-
+problem #
 """
-
 class ValidWordSquare:
     def solution(self, words: list) -> bool:
         """

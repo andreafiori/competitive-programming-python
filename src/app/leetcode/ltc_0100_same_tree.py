@@ -1,13 +1,12 @@
 """
-Same tree | leetcode 100 | https://leetcode.com/problems/same-tree/
+Same tree | https://leetcode.com/problems/same-tree/
 
 Given a root of each of the two trees, check if the trees are the exact same or not
 
-method: (DFS) inorder traversal to compare left subtree, current node and right subtree
+Method: (DFS) inorder traversal to compare left subtree, current node and right subtree
 
 """
-
-class Solution:
+class SameTree(object):
     def isSameTree(self, p, q):
         """
         :type p: TreeNode

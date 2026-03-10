@@ -1,11 +1,9 @@
 """
-Unique Paths | https://leetcode.com/problems/unique-paths/
-
+Unique Paths | https://leetcode.com/problems/unique-paths/ problem #
 """
-
 class UniquePaths:
 
-    def uniquePaths(self, m: int, n: int) -> int:
+    def find_unique_paths(self, m: int, n: int) -> int:
         """
         :type m: int
         :type n: int

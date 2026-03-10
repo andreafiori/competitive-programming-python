@@ -1,4 +1,9 @@
-class Solution:
+"""
+Valid Anagram | https://leetcode.com/problems/valid-anagram/
+
+https://leetcode.com/articles/valid-anagram/
+"""
+class ValidAnagram:
     # def isAnagram(self, s, t):
     #     """
     #     :type s: str
@@ -14,8 +19,6 @@ class Solution:
         :type t: str
         :rtype: bool
         """
-        # hash
-        # https://leetcode.com/articles/valid-anagram/
         if len(s) != len(t):
             return False
         counter = [0] * 26

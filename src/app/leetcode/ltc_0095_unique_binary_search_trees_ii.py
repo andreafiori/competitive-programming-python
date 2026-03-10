@@ -1,10 +1,8 @@
-"""
-Unique Binary Search Trees II | https://leetcode.com/problems/unique-binary-search-trees-ii/
-
-"""
-
 from common.tree_node import TreeNode
 
+"""
+Unique Binary Search Trees II | https://leetcode.com/problems/unique-binary-search-trees-ii/
+"""
 class UniqueBinarySearchTreesII:
     def generateTrees(self, n):
         """
@@ -15,8 +13,8 @@ class UniqueBinarySearchTreesII:
             return []
         return self.get_trees(1, n)
 
-    def get_trees(self, start, end):
-        # recursive solve this problem
+    def get_trees(self, start: int, end: int) -> list[TreeNode]:
+        """ Recursive solve this problem """
         res = []
         if start > end:
             res.append(None)
@@ -32,5 +30,3 @@ class UniqueBinarySearchTreesII:
                     root.right = rights[k]
                     res.append(root)
         return res
-
-

@@ -1,4 +1,8 @@
-class TwoSum
+"""
+Two Sum III - Data structure design | https://leetcode.com/problems/two-sum-iii-data-structure-design/
+"""
+class TwoSumIII:
+    """ Design and implement a TwoSum class. It should support the following operations: add and find. """
 
     def __init__(self):
         """
@@ -20,7 +24,7 @@ class TwoSum
         # once
         self.dic[number] = False
 
-    def find(self, value):
+    def find(self, value: int) -> bool:
         """
         Find if there exists any pair of math which sum is equal to the value.
         :type value: int
@@ -32,9 +36,3 @@ class TwoSum
                     continue
                 return True
         return False
-
-
-# Your TwoSum object will be instantiated and called as such:
-# twoSum = TwoSum()
-# twoSum.add(number)
-# twoSum.find(value)

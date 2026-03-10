@@ -1,4 +1,7 @@
-class Solution:
+"""
+Restore IP Addresses | https://leetcode.com/problems/restore-ip-addresses/
+"""
+class RestoreIPAddresses(object):
     # def restoreIpAddresses(self, s):
     #     """
     #     :type s: str
@@ -10,7 +13,7 @@ class Solution:
     #     if s == '0000':
     #         return ['0.0.0.0']
     #     return self.getremainIP(s, 0, 4)
-    #
+
     # def getremainIP(self, s, pos, count):
     #     if count == 1:
     #         curr = s[pos:]
@@ -24,7 +27,7 @@ class Solution:
     #                 res = self.getremainIP(s, i + 1, count - 1)
     #                 result.extend([prefix + '.' + t for t in res])
     #     return result
-    #
+
     # def isNum(self, prefix):
     #     curr = int(prefix)
     #     if curr > 255:
@@ -35,7 +38,7 @@ class Solution:
     #         return False
     #     return True
 
-    def restoreIpAddresses(self, s):
+    def restore_ip_addresses(self, s):
         ls = len(s)
         if ls == 0 or ls > 12:
             return []
@@ -49,12 +52,12 @@ class Solution:
                         add2 = s[i:i + j]
                         add3 = s[i + j:i + j + k]
                         add4 = s[i + j + k:]
-                        if self.isValid(add1) and self.isValid(add2) and \
-                                        self.isValid(add3) and self.isValid(add4):
+                        if self.is_valid(add1) and self.is_valid(add2) and \
+                                        self.is_valid(add3) and self.is_valid(add4):
                             res.append(add1 + '.' + add2 + '.' + add3 + '.' + add4)
         return res
 
-    def isValid(self, add):
+    def is_valid(self, add):
         if len(add) == 1:
             return True
         if add[0] == '0':
@@ -62,10 +65,3 @@ class Solution:
         if int(add) <= 255:
             return True
         return False
-
-
-if __name__ == '__main__':
-    s = Solution()
-    # print s.longestValidParentheses(")(((((()())()()))()(()))(")
-    print s.restoreIpAddresses('25525511135')
-

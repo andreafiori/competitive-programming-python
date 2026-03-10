@@ -1,4 +1,6 @@
 """
+Roman to Integer | https://leetcode.com/problems/roman-to-integer/
+
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
@@ -22,10 +24,9 @@ Questions: https://leetcode.com/problems/roman-to-integer/
 
 """
 
-class Solution:
+class RomanToInteger:
     def solution_one(self, s):
-        roman = {'I': 1, 'V': 5, 'X': 10,
-                 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        roman = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 }
         prev, total = 0, 0
         for c in s:
             curr = roman[c]

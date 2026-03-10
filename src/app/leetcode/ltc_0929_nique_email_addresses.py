@@ -1,5 +1,8 @@
-class Solution:
-    def numUniqueEmails(self, emails):
+"""
+Unique Email Addresses | https://leetcode.com/problems/unique-email-addresses/
+"""
+class UniqueEmailAddresses(object):
+    def numUniqueEmails(self, emails: list[str]) -> int:
         """
         :type emails: List[str]
         :rtype: int
