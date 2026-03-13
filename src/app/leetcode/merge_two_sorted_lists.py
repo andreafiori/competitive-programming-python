@@ -1,24 +1,18 @@
 """
+Merge Two Sorted Lists | https://leetcode.com/problems/merge-two-sorted-lists/
+
 You are given the heads of two sorted linked lists list1 and list2.
 
 Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
 
 Return the head of the merged linked list.
-
-Question: https://leetcode.com/problems/merge-two-sorted-lists/
-
 """
 
-from typing import Optional
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from common.list_node import ListNode
 
 class MergeTwoSortedLists:
+
     def solution_one(self, l1, l2):
-        # dummy head
         pos = dummyHead = ListNode(-1)
         while l1 is not None and l2 is not None:
             if l1.val <= l2.val:
@@ -36,8 +30,7 @@ class MergeTwoSortedLists:
             pos.next = l2
         return dummyHead.next
 
-
-    def solution_two(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def solution_two(self, list1: ListNode, list2: ListNode) -> ListNode:
         answer = ListNode()
         tail = answer
         while list1 and list2:

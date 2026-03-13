@@ -1,13 +1,10 @@
 
 import heapq
 
-class Interval
-    def __init__(self, s=0, e=0):
-        self.start = s
-        self.end = e
+from common.interval import Interval
 
-class MeetingRoomII
-    def minMeetingRooms(self, intervals):
+class MeetingRoomII:
+    def minMeetingRooms(self, intervals: [Interval]) -> int:
         """
         :type intervals: List[Interval]
         :rtype: int

@@ -1,9 +1,7 @@
-class Interval
-    def __init__(self, s=0, e=0):
-        self.start = s
-        self.end = e
+from common.interval import Interval
+
 class Solution:
-    def canAttendMeetings(self, intervals):
+    def can_attend_meetings1(self, intervals):
         """
         :type intervals: List[Interval]
         :rtype: bool
@@ -26,7 +24,7 @@ class Solution:
                 count -= 1
         return True
 
-    def canAttendMeetings(self, intervals):
+    def can_attend_meetings2(self, intervals):
         intervals.sort(key=lambda x: x.start)
         ls = len(intervals)
         for i in range(ls - 1):

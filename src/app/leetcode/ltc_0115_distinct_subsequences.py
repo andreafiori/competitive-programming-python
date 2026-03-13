@@ -1,9 +1,6 @@
 """
 Disiinct Subsequences | https://leetcode.com/problems/distinct-subsequences/
-
-https://discuss.leetcode.com/topic/51131/space-o-mn-and-o-n-python-solutions
 """
-
 class DistinctSubsequences:
 
     def numDistinct(self, s: str, t: str) -> int:

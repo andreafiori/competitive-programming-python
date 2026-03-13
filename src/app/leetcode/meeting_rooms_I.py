@@ -1,9 +1,7 @@
-class Interval
-    def __init__(self, s=0, e=0):
-        self.start = s
-        self.end = e
+from common.interval import Interval
+
 class Solution:
-    def canAttendMeetings(self, intervals):
+    def canAttendMeetings(self, intervals: Interval) -> bool:
         """
         :type intervals: List[Interval]
         :rtype: bool

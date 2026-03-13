@@ -5,11 +5,7 @@ An array A consisting of N integers is given. Rotation of the array means that e
 
 The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.
 
-Write a function:
-
-class Solution { public int[] solution(int[] A, int K); }
-
-that, given an array A consisting of N integers and an integer K, returns the array A rotated K times.
+Write a function that, given an array A consisting of N integers and an integer K, returns the array A rotated K times.
 
 For example, given
 
@@ -39,7 +35,6 @@ each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
 """
-
 class CyclicRotation:
     def rotate(self, a: list[int], k: int) -> list[int]:
         """

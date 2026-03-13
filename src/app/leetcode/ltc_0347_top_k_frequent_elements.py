@@ -1,10 +1,13 @@
-# top k frequency elements | leetcode 347 | https://leetcode.com/problems/top-k-frequent-elements/
-# use buckets with each bucket being the frequency of an element
+import collections
 
 from collections import Counter
 
-class Solution:
-    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+"""
+Top K Frequent Elements | https://leetcode.com/problems/top-k-frequent-elements/
+"""
+class TopKFrequentElements:
+
+    def top_k_frequent1(self, nums: list[int], k: int) -> list[int]:
         freq = Counter(nums)
         N = len(nums)
 
@@ -22,3 +25,12 @@ class Solution:
                     k -= len(x)
             else:
                 return k_mf
+
+    def top_k_frequent2(self, nums: list[int], k: int) -> list[int]:
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        counter = collections.Counter(nums)
+        return [k for k,v in counter.most_common(k)]
