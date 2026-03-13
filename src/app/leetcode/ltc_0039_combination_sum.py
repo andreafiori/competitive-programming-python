@@ -29,7 +29,7 @@ Constraints:
 
 """
 
-class CombinationSum(object):
+class CombinationSum:
 
     def combine(self, candidates, target):
         candidates.sort()

@@ -1,7 +1,7 @@
 """
 . Poor Pigs | https://leetcode.com/problems/poor-pigs/
 """
-class PoorPigs(object):
+class PoorPigs:
     def poorPigs(self, buckets: int, minutesToDie: int, minutesToTest: int) -> int:
         """
         :type buckets: int

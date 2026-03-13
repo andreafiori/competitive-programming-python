@@ -6,7 +6,7 @@ Given a root of each of the two trees, check if the trees are the exact same or 
 Method: (DFS) inorder traversal to compare left subtree, current node and right subtree
 
 """
-class SameTree(object):
+class SameTree:
     def isSameTree(self, p, q):
         """
         :type p: TreeNode

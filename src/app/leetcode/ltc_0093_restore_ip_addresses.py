@@ -1,7 +1,7 @@
 """
 Restore IP Addresses | https://leetcode.com/problems/restore-ip-addresses/
 """
-class RestoreIPAddresses(object):
+class RestoreIPAddresses:
     # def restoreIpAddresses(self, s):
     #     """
     #     :type s: str

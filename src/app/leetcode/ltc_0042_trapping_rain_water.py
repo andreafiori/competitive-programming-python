@@ -1,7 +1,7 @@
 """
 Trapping Rain Water | https://leetcode.com/problems/trapping-rain-water/description/
 """
-class TrappingRainWater(object):
+class TrappingRainWater:
 
     def trap(self, height: list) -> int:
         """

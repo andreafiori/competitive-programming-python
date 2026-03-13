@@ -48,7 +48,7 @@ Constraints:
 
 """
 
-class LongestAbsoluteFilePath(object):
+class LongestAbsoluteFilePath:
 
     def findLongestPath(self, input: str) -> int:
         """

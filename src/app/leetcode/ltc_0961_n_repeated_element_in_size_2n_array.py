@@ -3,7 +3,7 @@ import collections
 """
 N-Repeated Element in Size 2N Array | https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
 """
-class NRepeatedElementInSize2NArray(object):
+class NRepeatedElementInSize2NArray:
 
     def repeatedNTimes(self, A):
         """

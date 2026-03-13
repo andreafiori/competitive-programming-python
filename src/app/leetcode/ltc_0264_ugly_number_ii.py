@@ -18,7 +18,7 @@ Constraints:
     1 <= n <= 1690
 
 """
-class UglyNumberII(object):
+class UglyNumberII:
 
     def nth_ugly_number(self, n: int) -> int:
         """

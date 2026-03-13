@@ -1,11 +1,14 @@
-class Solution:
+"""
+Squares of a Sorted Array | https://leetcode.com/problems/squares-of-a-sorted-array/
+"""
+class SquaresOfASortedArray:
     # def sortedSquares(self, A):
     #     """
     #     :type A: List[int]
     #     :rtype: List[int]
     #     """
     #     # Directly sort
-    #     return sorted(x * x for x in A) 
+    #     return sorted(x * x for x in A)
 
     def sortedSquares(self, A):
         pos = 0

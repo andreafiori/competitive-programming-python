@@ -1,8 +1,8 @@
 """
+Palindrome Permutation II | https://leetcode.com/problems/palindrome-permutation-ii/
 
 """
-
-class Solution:
+class PalindromePermutationII:
     def generatePalindromes(self, s):
         """
         :type s: str

@@ -1,5 +1,9 @@
-class Solution:
-    def toLowerCase(self, str):
+"""
+To Lower Case | https://leetcode.com/problems/to-lower-case/
+"""
+class TolowerCase:
+
+    def transform(self, str: str) -> str:
         """
         :type str: str
         :rtype: str
@@ -12,6 +16,3 @@ class Solution:
             else:
                 res.append(c)
         return ''.join(res)
-
-    # def toLowerCase(self, str):
-    #     return str.lower()

@@ -1,7 +1,7 @@
 """
 Permutations | https://leetcode.com/problems/permutations/
 """
-class Permutations(object):
+class Permutations:
 
     def permute(self, nums):
         # DPS with swapping

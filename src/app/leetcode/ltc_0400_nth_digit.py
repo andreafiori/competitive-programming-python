@@ -1,7 +1,7 @@
 """
 Nth Digit | https://leetcode.com/problems/nth-digit/description/
 """
-class NthDigit(object):
+class NthDigit:
     def findNthDigit(self, n: int) -> int:
         """
         :type n: int

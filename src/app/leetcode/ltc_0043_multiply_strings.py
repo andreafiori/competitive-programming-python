@@ -1,7 +1,7 @@
 """
 Multiply Strings | https://leetcode.com/problems/multiply-strings/description/
 """
-class MultipyStrings(object):
+class MultipyStrings:
 
     def multiply(self, num1: str, num2: str) -> str:
         if num1 == '0' or num2 == '0':

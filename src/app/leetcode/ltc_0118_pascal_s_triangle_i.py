@@ -1,7 +1,7 @@
 """
 Pascal's Triangle | https://leetcode.com/problems/pascals-triangle/
 """
-class PascalTriangle(object):
+class PascalTriangle:
 
     def generate(self, numRows: int) -> list:
         """

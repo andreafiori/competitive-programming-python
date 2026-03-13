@@ -3,7 +3,7 @@ Bulls and Cows | https://leetcode.com/problems/bulls-and-cows/
 
 """
 
-class BullsAndCows(object):
+class BullsAndCows:
 
     def get_hint(self, secret, guess):
         """

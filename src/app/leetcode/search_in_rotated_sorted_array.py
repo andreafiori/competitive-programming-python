@@ -1,5 +1,6 @@
-class Solution:
-    def search(self, nums, target):
+class SearchInRotatedSortedArray:
+
+    def search(self, nums: list[int], target: int) -> int:
         """
         :type nums: List[int]
         :type target: int

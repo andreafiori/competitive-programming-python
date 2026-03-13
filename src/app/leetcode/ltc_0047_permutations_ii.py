@@ -1,7 +1,7 @@
 """
 Permutations II | https://leetcode.com/problems/permutations-ii/
 """
-class PermutationsII(object):
+class PermutationsII:
 
     def permuteUnique1(self, num):
         res = []

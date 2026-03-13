@@ -1,7 +1,7 @@
 """
 Power of Four | https://leetcode.com/problems/power-of-four/
 """
-class PowerOfFour(object):
+class PowerOfFour:
 
     def is_power_of_four(self, num: int) -> bool:
         """

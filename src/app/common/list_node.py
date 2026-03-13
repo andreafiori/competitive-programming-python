@@ -1,7 +1,7 @@
 """
 Listnode definition
 """
-class ListNode(object):
+class ListNode:
     """ Define and initialize a list node. """
 
     def __init__(self, x):

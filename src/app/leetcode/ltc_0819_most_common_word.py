@@ -1,7 +1,7 @@
 """
 . Most Common Word | https://leetcode.com/problems/most-common-word/
 """
-class MostCommonWord(object):
+class MostCommonWord:
     def mostCommonWord(self, paragraph, banned):
         """
         :type paragraph: str

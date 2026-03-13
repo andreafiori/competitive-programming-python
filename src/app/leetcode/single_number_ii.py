@@ -1,7 +1,5 @@
 """
-Single Number II
-
-URL: https://leetcode.com/problems/single-number-ii/
+Single Number II | https://leetcode.com/problems/single-number-ii/
 
 Given a non-empty array of integers, every element appears three times except for one, which appears exactly once.
 Find that single one.
@@ -17,34 +15,17 @@ Example 2:
     Output: 99
 
 """
-class SingleNumberII
-    # def singleNumber(self, nums):
-    #     """
-    #     :type nums: List[int]
-    #     :rtype: int
-    #     """
-    #     import ctypes
-    #     # note that if res is not c 32
-    #     # there will be errors
-    #     count = [0] * 32
-    #     res = ctypes.c_int32(0)
-    #     for i in range(32):
-    #         for num in nums:
-    #             if (ctypes.c_int32(num).value >> i) & 1:
-    #                 count[i] += 1
-    #         res.value |= ((count[i] % 3) << i)
-    #     return res.value
+class SingleNumberII:
 
-    def solution(self, nums):
-        """
-        Solution 2
-        :param nums: int
-        :return: int
+    def solution(self, nums: list[int]) -> int:
         """
         # bitmask
         # ones as a bitmask to represent the ith bit had appeared once.
         # twos as a bitmask to represent the ith bit had appeared twice.
         # threes as a bitmask to represent the ith bit had appeared three times.
+        :param nums: int
+        :return: int
+        """
         ones, twos, threes = 0, 0, 0
         for num in nums:
             twos |= ones & num

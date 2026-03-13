@@ -1,7 +1,7 @@
 """
 . Palindrome Pairs | https://leetcode.com/problems/palindrome-pairs/description/
 """
-class PalindromePairs(object):
+class PalindromePairs:
     def palindromePairs(self, words):
         """
         :type words: List[str]

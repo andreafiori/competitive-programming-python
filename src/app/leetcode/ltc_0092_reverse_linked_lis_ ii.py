@@ -4,7 +4,7 @@ from app.common.list_node import ListNode
 """
 Reverse Linked List II | https://leetcode.com/problems/reverse-linked-list-ii/
 """
-class ReverseLinkedListII(object):
+class ReverseLinkedListII:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         """
         :type head: ListNode

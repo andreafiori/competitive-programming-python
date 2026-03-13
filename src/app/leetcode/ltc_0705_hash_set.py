@@ -1,5 +1,5 @@
 """
-Hashset | leetcode 705 | https://leetcode.com/problems/design-hashset/
+Hashset | https://leetcode.com/problems/design-hashset/
 
 Design a HashSet without using any built-in hash table libraries.
 

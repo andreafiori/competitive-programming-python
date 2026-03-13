@@ -1,7 +1,7 @@
 """
 Merge Intervals | https://leetcode.com/problems/merge-intervals/
 """
-class MergeIntervals(object):
+class MergeIntervals:
     def merge(self, intervals):
         """
         :type intervals: List[Interval]

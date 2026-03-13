@@ -4,7 +4,7 @@ Shortest Unsorted Continuous Subarray | https://leetcode.com/problems/shortest-u
 https://leetcode.com/problems/shortest-unsorted-continuous-subarray/solution/
 """
 
-class ShortestUnsortedContinuousSubarray(object):
+class ShortestUnsortedContinuousSubarray:
 
     def findUnsortedSubarray(self, nums):
         """

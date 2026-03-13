@@ -1,7 +1,7 @@
 """
 One Edit Distance | https://leetcode.com/problems/one-edit-distance/
 """
-class OneEditDistance(object):
+class OneEditDistance:
 
     def is_one_edit_distance(self, s: str, t: str) -> bool:
         """

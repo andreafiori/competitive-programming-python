@@ -2,7 +2,7 @@
 Spiral Matrix | https://leetcode.com/problems/spiral-matrix/
 """
 
-class SpiralMatrix(object):
+class SpiralMatrix:
     def spiralOrder(self, matrix):
         """
         :type matrix: List[List[int]]

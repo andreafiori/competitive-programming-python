@@ -1,5 +1,8 @@
-class Solution:
-    def simplifyPath(self, path):
+"""
+Simplify path | https://leetcode.com/problems/simplify-path/
+"""
+class SimplifyPath:
+    def simplifyPath(self, path: str) -> str:
         """
         :type path: str
         :rtype: str

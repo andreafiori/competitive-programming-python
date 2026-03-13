@@ -1,7 +1,7 @@
 """
 Permutation Sequence | https://leetcode.com/problems/permutation-sequence/
 """
-class PermutationSequence(object):
+class PermutationSequence:
 
     def getPermutation(self, n: int, k: int) -> str:
         """

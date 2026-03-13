@@ -1,7 +1,7 @@
 """
 Transpose of a Matrix | https://leetcode.com/problems/transpose-matrix/
 """
-class TransposeMatrix(object):
+class TransposeMatrix:
     def transpose(self, A):
         """
         :type A: List[List[int]]

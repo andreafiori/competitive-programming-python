@@ -1,7 +1,7 @@
 """
 N Queens | http://leetcode.com/problems/n-queens/
 """
-class NQueens(object):
+class NQueens:
 
     def solveNQueens(self, n: int) -> list:
         """

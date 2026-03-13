@@ -3,7 +3,7 @@ from common.list_node import ListNode
 """
 Rotate List | https://leetcode.com/problems/rotate-list/
 """
-class RotateList(object):
+class RotateList:
 
     def rotate_right(self, head: ListNode, k: int) -> ListNode:
         """

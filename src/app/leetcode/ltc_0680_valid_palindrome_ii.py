@@ -1,7 +1,7 @@
 """
 . Valid Palindrome II | https://leetcode.com/problems/valid-palindrome-ii/
 """
-class ValidPalindromeII(object):
+class ValidPalindromeII:
 
     def validPalindrome(self, s: str) -> bool:
         return self.validPalindromeHelper(s, 0, len(s) - 1, 1)

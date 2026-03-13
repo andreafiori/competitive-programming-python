@@ -1,7 +1,7 @@
 """
 Paint Fence | https://leetcode.com/problems/paint-fence/
 """
-class PaintFence(object):
+class PaintFence:
 
     def num_ways(self, n, k):
         if n == 0:

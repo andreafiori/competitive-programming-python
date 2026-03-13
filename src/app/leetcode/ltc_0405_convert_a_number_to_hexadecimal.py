@@ -3,7 +3,7 @@ Convert a Number to Hexadecimal | https://leetcode.com/problems/convert-a-number
 
 """
 
-class ConvertANumberToHexadecimal(object):
+class ConvertANumberToHexadecimal:
     def toHex(self, num):
         """
         :type num: int

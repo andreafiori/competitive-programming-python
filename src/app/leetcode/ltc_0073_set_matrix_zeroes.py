@@ -1,5 +1,9 @@
-class Solution:
-    def setZeroes(self, matrix):
+"""
+Set Matrix Zeroes | https://leetcode.com/problems/set-matrix-zeroes/
+"""
+class SetMatrixZeroes:
+
+    def set_zeroes(self, matrix: list[list[int]]) -> None:
         """
         :type matrix: List[List[int]]
         :rtype: void Do not return anything, modify matrix in-place instead.

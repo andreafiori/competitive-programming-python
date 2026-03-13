@@ -1,7 +1,7 @@
 """
 Search a 2D Matrix | https://leetcode.com/problems/search-a-2d-matrix/
 """
-class SearchA2DMatrix(object):
+class SearchA2DMatrix:
     # def searchMatrix(self, matrix, target):
     #     """
     #     :type matrix: List[List[int]]

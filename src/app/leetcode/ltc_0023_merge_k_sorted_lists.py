@@ -3,7 +3,7 @@ from common.list_node import ListNode
 """
 Merge k sorted linked lists | https://leetcode.com/problems/merge-k-sorted-lists/
 """
-class MergeKSortedLists(object):
+class MergeKSortedLists:
 
     def merge_k_lists(self, lists):
         # recursive

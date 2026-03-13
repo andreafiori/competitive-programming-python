@@ -1,7 +1,7 @@
 """
 Nim Game | https://leetcode.com/problems/nim-game/
 """
-class NimGame(object):
+class NimGame:
 
     def can_win_nim(self, n: int) -> bool:
         """

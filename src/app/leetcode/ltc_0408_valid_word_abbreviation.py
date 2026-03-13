@@ -1,7 +1,7 @@
 """
 Valid Word Abbreviation | https://leetcode.com/problems/valid-word-abbreviation/
 """
-class ValidWordAbbreviation(object):
+class ValidWordAbbreviation:
 
     def validWordAbbreviation(self, word: str, abbr: str) -> bool:
         """Check if the given abbreviation is valid for the given word."""

@@ -1,5 +1,9 @@
-class Solution:
-    def reverseVowels(self, s):
+"""
+Reverse Vowels of a String | https://leetcode.com/problems/reverse-vowels-of-a-string/
+"""
+class RevereseVowelsOfAString:
+
+    def reverse(self, s: str) -> str:
         """
         :type s: str
         :rtype: str

@@ -1,7 +1,7 @@
 """
 Unique Email Addresses | https://leetcode.com/problems/unique-email-addresses/
 """
-class UniqueEmailAddresses(object):
+class UniqueEmailAddresses:
     def numUniqueEmails(self, emails: list[str]) -> int:
         """
         :type emails: List[str]

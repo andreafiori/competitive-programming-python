@@ -1,7 +1,7 @@
 """
 Number of Islands | https://leetcode.com/problems/number-of-islands/
 """
-class NumberOfIslands(object):
+class NumberOfIslands:
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
