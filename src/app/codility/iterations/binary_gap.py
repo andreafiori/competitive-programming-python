@@ -22,7 +22,7 @@ class BinaryGap:
     # the largest integer we have to deal with
     MAXINT = 2147483647
 
-    def solution(self, N):
+    def solution_one(self, N: int) -> int:
         """
         Determines the maximal 'binary gap' in an integer
         :param N: a positive integer (between 1 and maxint or 2million odd)
@@ -73,3 +73,34 @@ class BinaryGap:
         else:
             # no binary gaps found
             return 0
+
+    def solution_two(self, N: int) -> int:
+        """ using the "concept of bit manipulation" and "& operation" """
+        current_gap = 0
+        max_gap = 0
+        
+        start_counting = False
+
+        temp = N
+        
+        while temp > 0: 
+            
+            # case 1
+            if (temp & 1 == 1): 
+                # case 1-1
+                if (start_counting == False):
+                    start_counting = True
+                # case 1-2
+                elif (start_counting == True):
+                    max_gap = max(max_gap, current_gap)
+                    current_gap = 0 #reset
+            
+            # case 2
+            elif (temp & 1 == 0):
+                if(start_counting == True):
+                    current_gap += 1
+            
+            # shift one bit (every loop)
+            temp = temp >> 1
+        
+        return max_gap
