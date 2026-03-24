@@ -38,14 +38,3 @@ class Solution:
     #         [hash(w) for w in words]), len(s)
     #     h = [hash(s[i:i + wLen]) if s[i:i + wLen] in wSet else None for i in range(sLen - wLen + 1)]
     #     return [i for i in range(sLen - wtLen + 1) if h[i] and sorted(h[i: i + wtLen: wLen]) == sortHash]
-
-if __name__ == '__main__':
-    s = Solution()
-    # print s.longestValidParentheses(")(((((()())()()))()(()))(")
-    print s.findSubstring('wordgoodgoodgoodbestword', ["word", "good", "best", "good"])
-
-    # [6,9,12]
-
-
-
-

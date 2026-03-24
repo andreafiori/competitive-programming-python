@@ -119,9 +119,3 @@ class Solution:
             return s[min_begin: min_end + 1]
         else:
             return ''
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.minWindow('a', 'a')
-

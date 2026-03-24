@@ -6,12 +6,9 @@ Given two strings needle and haystack, return the index of the first occurrence 
 Clarification:
     What should we return when needle is an empty string? This is a great question to ask during an interview.
 
-For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's strstr() and Java's indexOf().
 
-https://discuss.leetcode.com/topic/3576/accepted-kmp-solution-in-java-for-reference/2
 """
-
-class Solution:
+class ImplementStrStr:
     def solution_one(self, haystack: str, needle: str) -> int:
         if not needle:
             return 0
@@ -49,7 +46,7 @@ class Solution:
                 j = next[j]
         return -1
 
-    def makeNext(self, needle):
+    def make_next(self, needle):
         ls = len(needle)
         next = [0] * ls
         next[0], i, j = -1, 0, -1

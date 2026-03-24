@@ -1,12 +1,12 @@
-# Definition for binary tree with next pointer.
-# class TreeLinkNode
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-#         self.next = None
+class TreeLinkNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        self.next = None
 
-class Solution:
+class PopulatingNextRightPointersInEachNodeII:
+
     # def connect(self, root):
     #     """
     #     :type root: TreeLinkNode
@@ -29,8 +29,7 @@ class Solution:
     #             last = node
     #         nodes = next_step
 
-    def connect(self, root):
-        # https://discuss.leetcode.com/topic/28580/java-solution-with-constant-space
+    def connect(self, root: TreeLinkNode) -> None:
         dummyHead = TreeLinkNode(-1)
         pre = dummyHead
         while root is not None:
@@ -45,5 +44,3 @@ class Solution:
                 pre = dummyHead
                 root = dummyHead.next
                 dummyHead.next = None
-
-

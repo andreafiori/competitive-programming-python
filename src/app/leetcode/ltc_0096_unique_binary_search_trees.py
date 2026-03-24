@@ -1,14 +1,9 @@
 """
 Unique binary search trees  | https://leetcode.com/problems/unique-binary-search-trees/
-
-Method: dp, use cached results for subtrees of all possible roots
-
-https://leetcode.com/discuss/86650/fantastic-clean-java-dp-solution-with-detail-explaination
-
 """
 
 class UniqueBinarySearchTrees:
-    def numTrees(self, n):
+    def num_trees(self, n):
         """
         :type n: int
         :rtype: int
@@ -21,7 +16,7 @@ class UniqueBinarySearchTrees:
                 dp[level] += dp[level - root] * dp[root - 1]
         return dp[n]
 
-    def numTrees(self, n: int) -> int:
+    def num_trees_alternative(self, n: int) -> int:
         # cache of possible trees
         possibleTrees = [1] * (n + 1)
 

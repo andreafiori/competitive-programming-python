@@ -23,8 +23,8 @@ Constraints:
     num1 and num2 don't have any leading zeros except for the zero itself.
 
 """
-
 class AddStrings:
+
     # @staticmethod
     # def solution(num1, num2):
     #     """
@@ -60,13 +60,11 @@ class AddStrings:
     #     return ''.join(res)
 
     @staticmethod
-    def solution(num1, num2):
+    def solution(num1: str, num2: str) -> str:
         res = []
         pos1 = len(num1) - 1
         pos2 = len(num2) - 1
         carry = 0
-        # This conditon is great
-        # https://leetcode.com/problems/add-strings/discuss/90436/Straightforward-Java-8-main-lines-25ms
         while pos1 >= 0 or pos2 >= 0 or carry == 1:
             digit1 = digit2 = 0
             if pos1 >= 0:

@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/palindrome-partitioning/
+Palindrome Partitioning | https://leetcode.com/problems/palindrome-partitioning/
 
 Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s.
 
@@ -16,29 +16,28 @@ Constraints:
     s contains only lowercase English letters.
 
 """
+class PalindromePartitioning:
 
-class PalindromePartitioning
-    def partition(self, s):
+    def partition(self, s: str) -> list:
         """
         :type s: str
         :rtype: List[List[str]]
         """
-        # https://discuss.leetcode.com/topic/6186/java-backtracking-solution/2
         result = []
         curr = []
-        self.recurPartition(result, curr, s, 0)
+        self.recur_partition(result, curr, s, 0)
         return result
 
-    def recurPartition(self, result, curr, s, start):
+    def recur_partition(self, result: list, curr: list, s: str, start: int):
         if start == len(s):
             result.append(list(curr))
         for i in range(start, len(s)):
-            if self.isPalindrome(s, start, i):
+            if self.is_palindrome(s, start, i):
                 curr.append(s[start:i + 1])
-                self.recurPartition(result, curr, s, i + 1)
+                self.recur_partition(result, curr, s, i + 1)
                 curr.pop()
 
-    def isPalindrome(self, s, begin, end):
+    def is_palindrome(self, s: str, begin: int, end: int) -> bool:
         while begin < end:
             if s[begin] != s[end]:
                 return False

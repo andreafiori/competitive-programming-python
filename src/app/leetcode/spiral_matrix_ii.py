@@ -15,8 +15,3 @@ class Solution:
             pos[0] = pos[0] + move[0]
             pos[1] = pos[1] + move[1]
         return res
-
-if __name__ == '__main__':
-    # begin
-    s = Solution()
-    print s.generateMatrix(2)
