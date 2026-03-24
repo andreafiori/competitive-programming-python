@@ -1,0 +1,24 @@
+"""
+Sorted array to bst | https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+
+Given a sorted array of int, convert it to a balanced binary search tree
+
+method: take middle element as root, use recursion for depth first, add each subtree as a balanced bst
+
+"""
+
+from common.tree_node import TreeNode
+
+class SortedArrayToBST:
+
+    def sortedArrayToBST(self, nums):
+        if not nums:
+            return None
+
+        mid = len(nums) // 2
+
+        root = TreeNode(val = nums[mid])
+        root.left = self.sortedArrayToBST(nums[:mid])
+        root.right = self.sortedArrayToBST(nums[mid+1:])
+
+        return root

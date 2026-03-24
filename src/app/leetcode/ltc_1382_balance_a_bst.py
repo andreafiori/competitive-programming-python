@@ -4,35 +4,35 @@
 
 from common.tree_node import TreeNode
 
-class Solution:
+class BalanceBST:
     # convert sorted array to bst
-    def sortedArrayToBST(self, nums):
+    def sorted_array_to_BST(self, nums):
         if not nums:
             return None
-        
+
         mid = len(nums) // 2
-        
+
         root = TreeNode(val = nums[mid])
-        root.left = self.sortedArrayToBST(nums[:mid])
-        root.right = self.sortedArrayToBST(nums[mid+1:])
-        
+        root.left = self.sorted_array_to_BST(nums[:mid])
+        root.right = self.sorted_array_to_BST(nums[mid+1:])
+
         return root
-    
+
     # in-order traveral gives sorted array
-    def inorderTraversal(self, root):
+    def inorder_traversal(self, root):
         travList = []
-        
-        def traverse(root, travList):
-            if root is None:
-                return None
-            
-            traverse(root.left, travList)
-            travList.append(root.val)
-            traverse(root.right, travList)
-            
-        traverse(root, travList)
+
+        self.traverse(root, travList)
         return travList
 
-    # balance a binary search tree
-    def balanceBST(self, root):
-        return self.sortedArrayToBST(self.inorderTraversal(root))
+    def traverse(self, root, travList):
+        if root is None:
+            return None
+
+        self.traverse(root.left, travList)
+        travList.append(root.val)
+        self.traverse(root.right, travList)
+
+    def balance_BST(self, root):
+        """ Balance a binary search tree """
+        return self.sorted_array_to_BST(self.inorder_traversal(root))
