@@ -1,5 +1,5 @@
 """
-PermCheck | https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/
+PermCheck | https://app.codility.com/programmers/task/permutation_check
 
 Check whether array A is a permutation.
 

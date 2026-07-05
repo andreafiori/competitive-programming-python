@@ -2,76 +2,60 @@ import pytest
 
 from app.codility.iterations.binary_gap import BinaryGap
 
+
 @pytest.fixture
 def binary_gap():
     return BinaryGap()
 
+
 class TestBinaryGap:
 
-    def test_example1(self, binary_gap):
-        assert binary_gap.solution(1041) == 5
+    @pytest.mark.parametrize("method_name", ["solution_one", "solution_two"])
+    def test_binary_gap_examples(self, binary_gap, method_name):
+        solution = getattr(binary_gap, method_name)
 
-    def test_example2(self, binary_gap):
-        assert binary_gap.solution(15) == 0
+        assert solution(1041) == 5
+        assert solution(15) == 0
+        assert solution(1) == 0
+        assert solution(5) == 1
+        assert solution(6) == 0
+        assert solution(328) == 2
+        assert solution(9) == 2
+        assert solution(11) == 1
+        assert solution(19) == 2
+        assert solution(42) == 1
 
-    def test_extremes(self, binary_gap):
-        assert binary_gap.solution(1) == 0
-        assert binary_gap.solution(5) == 1
-        assert binary_gap.solution(binary_gap.MAXINT) == 0
+    @pytest.mark.parametrize(
+        "method_name,value,expected",
+        [
+            ("solution_one", 1162, 3),
+            ("solution_two", 1162, 3),
+            ("solution_two", 51712, 2),
+            ("solution_two", 561892, 3),
+            ("solution_two", 66561, 9),
+            ("solution_two", 6291457, 20),
+            ("solution_two", 74901729, 4),
+            ("solution_two", 805306369, 27),
+            ("solution_two", 1376796946, 5),
+            ("solution_two", 1073741825, 29),
+            ("solution_two", 1610612737, 28),
+        ],
+    )
+    def test_binary_gap_large_values(self, binary_gap, method_name, value, expected):
+        solution = getattr(binary_gap, method_name)
 
-    def test_trailing_zeros(self, binary_gap):
-        assert binary_gap.solution(6) == 0
-        assert binary_gap.solution(328) == 2
+        assert solution(value) == expected
 
-    def test_simple1(self, binary_gap):
-        assert binary_gap.solution(9) == 2
-        assert binary_gap.solution(11) == 1
-
-    def test_simple2(self, binary_gap):
-        assert binary_gap.solution(19) == 2
-        assert binary_gap.solution(42) == 1
-
-    def test_simple3(self, binary_gap):
-        assert binary_gap.solution(1162) == 3
-        assert binary_gap.solution(5) == 1
-
-    def test_medium1(self, binary_gap):
-        assert binary_gap.solution(51712) == 2
-        assert binary_gap.solution(20) == 1
-
-    def test_medium2(self, binary_gap):
-        assert binary_gap.solution(561892) == 3
-        assert binary_gap.solution(9) == 2
-
-    def test_medium3(self, binary_gap):
-        assert binary_gap.solution(66561) == 9
-
-    def test_large1(self, binary_gap):
-        assert binary_gap.solution(6291457) == 20
-
-    def test_large2(self, binary_gap):
-        assert binary_gap.solution(74901729) == 4
-
-    def test_large3(self, binary_gap):
-        assert binary_gap.solution(805306369) == 27
-
-    def test_large4(self, binary_gap):
-        assert binary_gap.solution(1376796946) == 5
-
-    def test_large5(self, binary_gap):
-        assert binary_gap.solution(1073741825) == 29
-
-    def test_large6(self, binary_gap):
-        assert binary_gap.solution(1610612737) == 28
-
-    def test_non_int(self, binary_gap):
+    def test_solution_one_rejects_invalid_inputs(self, binary_gap):
         with pytest.raises(TypeError):
-            binary_gap.solution(1.0)
+            binary_gap.solution_one(1.0)
 
-    def test_zero(self, binary_gap):
         with pytest.raises(ValueError):
-            binary_gap.solution(0)
+            binary_gap.solution_one(0)
 
-    def test_maxint_plus_one(self, binary_gap):
         with pytest.raises(ValueError):
-            binary_gap.solution(2147483648)
+            binary_gap.solution_one(binary_gap.MAXINT + 1)
+
+    def test_solution_two_raises_type_error_for_non_int(self, binary_gap):
+        with pytest.raises(TypeError):
+            binary_gap.solution_two(1.0)

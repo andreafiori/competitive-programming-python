@@ -48,8 +48,8 @@ class MissingInteger:
     def alternate_solution(self, A) -> int:
         """
         A 'Pidgeon Hole' solution:
-        :param A: non-empty list of integers
-        :return: an integer - the smallest positive integer that is missing
+            :param A: non-empty list of integers
+            :return: an integer - the smallest positive integer that is missing
         """
         # dictionary of booleans indicating which ints we've seen
         roll = {}
