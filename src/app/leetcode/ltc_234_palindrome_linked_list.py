@@ -17,14 +17,11 @@ Constraints:
 
 """
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from app.common.list_node import ListNode
 
 class PalindromeLinkedList:
 
-    def isPalindrome(self, head: ListNode) -> bool:
+    def is_palindrome(self, head: ListNode) -> bool:
 
         # if underflow, is palindrome
         if not head or not head.next: return True
@@ -71,4 +68,3 @@ class PalindromeLinkedList:
         if not fast:
             return prev, False
         return slow, True
-

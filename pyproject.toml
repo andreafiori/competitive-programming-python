@@ -3,10 +3,10 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "myapp"
+name = "PythonCompetitiveprogramming"
 version = "0.1.0"
-description = "Simple starter app"
-authors = [{ name = "Your Name" }]
+description = "Python competitive programming problems and solutions"
+authors = [{ name = "Andrea Fiori" }]
 dependencies = []
 
 [tool.setuptools.packages.find]

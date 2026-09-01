@@ -1,16 +1,31 @@
 """
+Longest Common Prefix | leetcode 14 | https://leetcode.com/problems/longest-common-prefix/
+
 Write a function to find the longest common prefix string amongst an array of strings.
 
 If there is no common prefix, return an empty string "".
 
-Questions: https://leetcode.com/problems/longest-common-prefix/
+Example 1:
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+
+Constraints:
+
+1 <= strs.length <= 200
+0 <= strs[i].length <= 200
+strs[i] consists of only lowercase English letters if it is non-empty.
 
 """
 
 from typing import List
 
 class LongestCommonPrefix:
-    def find(self, strs):
+    def find(self, strs: List[str]) -> str:
         ls = len(strs)
         if ls == 1:
             return strs[0]
@@ -36,10 +51,6 @@ class LongestCommonPrefix:
             pos += 1
         return prefix
 
-    # def find2(self, strs):
-    #     # https://leetcode.com/discuss/89987/one-line-solution-using-itertools-takewhile
-    #     return reduce(lambda s1, s2: ''.join(y[0] for y in itertools.takewhile(lambda x: x[0] == x[1], zip(s1, s2))), strs or [''])
-
     def find3(self, strs: List[str]) -> str:
         res = ""
         n = len(strs)
@@ -52,6 +63,3 @@ class LongestCommonPrefix:
             else:
                 res = res + first[i]
         return res
-
-#     s = Solution()
-#     print s.longestCommonPrefix(["aca","cba"])

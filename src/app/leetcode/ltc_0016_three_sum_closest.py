@@ -1,7 +1,5 @@
 """
-Three sum closest
-
-URL https://leetcode.com/problems/3sum-closest/
+Three sum closest | https://leetcode.com/problems/3sum-closest/
 
 Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 
@@ -13,7 +11,7 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 """
 
 class ThreeSumClosest:
-    def find(nums, target):
+    def find(self, nums, target):
         """
         Three sum closest
         :param nums:
@@ -22,7 +20,7 @@ class ThreeSumClosest:
         """
         ls = len(nums)
         sort_nums = sorted(nums)
-        res = nums[0] + nums[1] + nums[2]
+        res = sort_nums[0] + sort_nums[1] + sort_nums[2]
         for i in range(ls - 2):
             j, k = i + 1, ls - 1
             while j < k:
@@ -34,10 +32,3 @@ class ThreeSumClosest:
                 else:
                     k -= 1
         return res
-
-    #     def find(self, nums, target):
-    #         """
-    #         :type nums: List[int]
-    #         :type target: int
-    #         :rtype: int
-    #         """

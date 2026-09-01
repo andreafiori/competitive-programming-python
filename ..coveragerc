@@ -1,0 +1,11 @@
+[run]
+source = src
+omit =
+    */tests/*
+    */__init__.py
+
+[html]
+directory = htmlcov
+show_contexts = true
+skip_covered = false
+skip_empty = true

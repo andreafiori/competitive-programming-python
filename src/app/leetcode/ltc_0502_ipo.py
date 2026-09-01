@@ -8,18 +8,18 @@ min-heap to track capital and max-heap to track profits
 
 import heapq
 
-class Solution:
-    def findMaximizedCapital(self, k: int, w: int, profits: list[int], capital: list[int]) -> int:
-        maxHeap = []
-        minHeap = [(c, p) for c, p in zip(capital, profits)]
-        heapq.heapify(minHeap)
+class IPO:
+    def find_maximized_capital(self, k: int, w: int, profits: list[int], capital: list[int]) -> int:
+        max_heap = []
+        min_heap = [(c, p) for c, p in zip(capital, profits)]
+        heapq.heapify(min_heap)
 
         for _ in range(k):
-            while minHeap and minHeap[0][0] <= w:
-                _, p = heapq.heappop(minHeap)
-                heapq.heappush(maxHeap, -1 * p)
-            if not maxHeap:
+            while min_heap and min_heap[0][0] <= w:
+                _, p = heapq.heappop(min_heap)
+                heapq.heappush(max_heap, -1 * p)
+            if not max_heap:
                 break
-            w += -1 * heapq.heappop(maxHeap)
+            w += -1 * heapq.heappop(max_heap)
 
         return w

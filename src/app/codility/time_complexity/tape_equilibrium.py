@@ -10,22 +10,22 @@ Every time we move the index, we adjust both head and tail, compute and compare 
 """
 
 class TapeEquilibrium:
-    def solution(self, A):
+    def solution(self, a):
         """
-        Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
-        :param A: non-empty list of integers
+        Minimize the value |(a[0] + ... + a[P-1]) - (a[P] + ... + a[N-1])|.
+        :param a: non-empty list of integers
         :return: minimal difference between two partitions
         """
-        if len(A) < 2:
+        if len(a) < 2:
             raise ValueError("Array must contain at least two elements")
 
-        before = A[0]
-        after = sum(A) - A[0]
+        before = a[0]
+        after = sum(a) - a[0]
         best = abs(before - after)
 
-        for P in range(1, len(A) - 1):
-            before += A[P]
-            after -= A[P]
+        for P in range(1, len(a) - 1):
+            before += a[P]
+            after -= a[P]
             best = min(best, abs(before - after))
 
         return best

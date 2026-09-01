@@ -1,28 +1,48 @@
 """
 find all anagrams in string | leetcode 438 | https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
-sliding window to track "which" substring; add ptr2 to counter, remove ptr1 from counter
+Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
+
+Example 1:
+Input: s = "cbaebabacd", p = "abc"
+Output: [0,6]
+
+Explanation:
+The substring with start index = 0 is "cba", which is an anagram of "abc".
+The substring with start index = 6 is "bac", which is an anagram of "abc".
+
+Example 2:
+Input: s = "abab", p = "ab"
+Output: [0,1,2]
+
+Explanation:
+The substring with start index = 0 is "ab", which is an anagram of "ab".
+The substring with start index = 1 is "ba", which is an anagram of "ab".
+The substring with start index = 2 is "ab", which is an anagram of "ab".
+
+Constraints:
+1 <= s.length, p.length <= 3 * 104
+s and p consist of lowercase English letters.
 
 """
 
-
 from collections import Counter
 
-class Solution:
-    def findAnagrams(self, s: str, p: str) -> list[int]:
-        Ns, Np = len(s), len(p)
-        ptr1 = 0
-        ptr2 = Np - 1
+class FindAllAnagramsInString:
+    def solution(self, s: str, p: str) -> list[int]:
+        n_s, n_p = len(s), len(p)
+        ptr_1 = 0
+        ptr_2 = n_p - 1
         anagrams = []
-        freq_s, freq_p = Counter(s[ptr1:(ptr2 + 1)]), Counter(p)
+        freq_s, freq_p = Counter(s[ptr_1:(ptr_2 + 1)]), Counter(p)
 
-        while ptr2 < Ns:
+        while ptr_2 < n_s:
             if freq_s == freq_p:
-                anagrams.append(ptr1)
-            freq_s[s[ptr1]] -= 1
-            ptr1 += 1
-            ptr2 += 1
-            if ptr2 != Ns:
-                freq_s[s[ptr2]] = 1 + freq_s.get(s[ptr2], 0)
+                anagrams.append(ptr_1)
+            freq_s[s[ptr_1]] -= 1
+            ptr_1 += 1
+            ptr_2 += 1
+            if ptr_2 != n_s:
+                freq_s[s[ptr_2]] = 1 + freq_s.get(s[ptr_2], 0)
 
         return anagrams

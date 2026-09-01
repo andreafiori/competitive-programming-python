@@ -2,25 +2,26 @@
 import pytest
 import random
 
-from app.codility.time_complexity.perm_missing_elem import PerMissElem
+from app.codility.time_complexity.perm_missing_elem import PermMissingElem
 
 @pytest.fixture
 def perm_missing_elem():
-    return PerMissElem()
+    return PermMissingElem()
 
-class TestPerMissElem:
+class TestPermMissingElem:
     INT_RANGE = (0, 100000)
     def test_example1(self, perm_missing_elem):
         assert perm_missing_elem.solution([2,3,1,5]) == 4
 
     def test_single(self, perm_missing_elem):
-        assert perm_missing_elem.solution([2]) == 1
         assert perm_missing_elem.solution([1]) == 2
+        assert perm_missing_elem.solution([2]) == 1
 
     def test_random(self, perm_missing_elem):
         arr = [n for n in range(1, random.randint(*self.INT_RANGE))]
         missing =  random.randint(0, len(arr))
-        arr.remove(missing)
+        if missing != 0:
+            arr.remove(missing)
 
         assert perm_missing_elem.solution(arr) == missing
 

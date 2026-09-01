@@ -1,18 +1,26 @@
 """
 Binary tree paths | leetcode 257 | https://leetcode.com/problems/binary-tree-paths/
 
-Method: (dfs) in-order traversal and at each node, update path. if leaf, append to list of paths.
+Given the root of a binary tree, return all root-to-leaf paths in any order.
+
+A leaf is a node with no children.
+
+Example 1:
+Input: root = [1,2,3,null,5]
+Output: ["1->2->5","1->3"]
+
+Example 2:
+Input: root = [1]
+Output: ["1"]
+
+Constraints:
+The number of nodes in the tree is in the range [1, 100].
+-100 <= Node.val <= 100
 
 """
 
 from typing import Optional, List
-
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from app.common.tree_node import TreeNode
 
 class BinaryTreePath:
     def solution_one(self, root: Optional[TreeNode]) -> List[str]:

@@ -1,0 +1,19 @@
+"""
+Find Minimum in Rotated Sorted Array II | LeetCode 154 | Medium | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
+"""
+
+class FindMinimumInRotatedSortedArrayII:
+
+    def find_min(self, nums: list[int]) -> int:
+        l, r = 0, len(nums) - 1
+        while l < r and nums[l] >= nums[r]:
+            mid = (l + r) // 2
+            if nums[mid] > nums[r]:
+                l = mid + 1
+            elif nums[mid] < nums[l]:
+                r = mid
+            else:
+                l += 1
+        return nums[l]
+
+

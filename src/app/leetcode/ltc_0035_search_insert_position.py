@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/search-insert-position/
+Search Insert Position | leetcode 35 | https://leetcode.com/problems/search-insert-position/
 
 Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
@@ -13,7 +13,7 @@ class SearchInsertPosition:
     def solution_one(self, nums, target):
         l, r = 0, len(nums) - 1
         while l < r:
-            mid = (l + r) / 2
+            mid = (l + r) // 2
             if nums[mid] < target:
                 l = mid + 1
             else:

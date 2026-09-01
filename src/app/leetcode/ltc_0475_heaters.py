@@ -31,7 +31,7 @@ Constraints:
 """
 
 class Heaters:
-    def findRadius(self, houses: list[int], heaters: list[int]) -> int:
+    def solution(self, houses: list[int], heaters: list[int]) -> int:
         """
         :type houses: List[int]
         :type heaters: List[int]

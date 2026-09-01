@@ -1,0 +1,24 @@
+"""
+Flip Game | leetcode 294 | https://leetcode.com/problems/flip-game/description/
+
+
+"""
+
+from ast import List
+
+class FlipGame:
+
+    def generate_possible_next_moves(self, s: str) -> List[str]:
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        # return [s[:i] + "--" + s[i+2:] for i in range(len(s) - 1) if s[i] == s[i + 1] == "+"]
+        res = []
+        if s is None or len(s) == 0:
+            return res
+        ls = len(s)
+        for i in range(ls - 1):
+            if s[i] == '+' and s[i + 1] == '+':
+                res.append(s[:i] + '--' + s[i + 2:])
+        return res

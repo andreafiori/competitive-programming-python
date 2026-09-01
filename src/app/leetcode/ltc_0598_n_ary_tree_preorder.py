@@ -10,7 +10,7 @@ class Node:
         self.val = val
         self.children = children
 
-class Solution:
+class NAryTreePreorder:
     def preorder(self, root):
         def dfs(root):
             if root is None:

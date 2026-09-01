@@ -22,22 +22,22 @@ class BinaryGap:
     # the largest integer we have to deal with
     MAXINT = 2147483647
 
-    def solution_one(self, N: int) -> int:
+    def solution_one(self, n: int) -> int:
         """
         Determines the maximal 'binary gap' in an integer
-        :param N: a positive integer (between 1 and maxint or 2million odd)
+        :param n: a positive integer (between 1 and maxint or 2million odd)
         :return: a count of the longest sequence of zeros in the binary representation of the integer
         """
         # protect against crazy inputs
-        if not isinstance(N, int):
+        if not isinstance(n, int):
             raise TypeError("Input must be an integer")
-        if N < 1:
+        if n < 1:
             raise ValueError("Input must be a positive integer")
-        if N > self.MAXINT:
+        if n > self.MAXINT:
             raise ValueError("Input must be a positive integer less than 2,147,483,647")
 
         # convert the number to a string containing '0' and '1' chars
-        binary_string = str(bin(N))[2:]
+        binary_string = str(bin(n))[2:]
 
         # the longest binary gap: use None to indicate no 'gap' yet found (set to zero at the first flip)
         max_count = None
@@ -67,26 +67,25 @@ class BinaryGap:
             # track what the last bit was
             was_zero = is_zero
 
-        #print "%s: %s = %s" % (N, binary_string, max_count)
         if max_count is not None:
             return max_count
         else:
             # no binary gaps found
             return 0
 
-    def solution_two(self, N: int) -> int:
+    def solution_two(self, n: int) -> int:
         """ using the "concept of bit manipulation" and "& operation" """
         current_gap = 0
         max_gap = 0
-        
+
         start_counting = False
 
-        temp = N
-        
-        while temp > 0: 
-            
+        temp = n
+
+        while temp > 0:
+
             # case 1
-            if (temp & 1 == 1): 
+            if (temp & 1 == 1):
                 # case 1-1
                 if (start_counting == False):
                     start_counting = True
@@ -94,13 +93,12 @@ class BinaryGap:
                 elif (start_counting == True):
                     max_gap = max(max_gap, current_gap)
                     current_gap = 0 #reset
-            
+
             # case 2
-            elif (temp & 1 == 0):
-                if(start_counting == True):
-                    current_gap += 1
-            
+            elif (temp & 1 == 0 and start_counting == True):
+                current_gap += 1
+
             # shift one bit (every loop)
             temp = temp >> 1
-        
+
         return max_gap

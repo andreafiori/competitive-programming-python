@@ -3,31 +3,42 @@ Minimum absolute difference in BST | leetcode 530 | https://leetcode.com/problem
 
 Method: dfs, inorder traversal
 
+Given the root of a Binary Search Tree (BST), return the minimum absolute difference between the values of any two different nodes in the tree.
+
+Example 1:
+Input: root = [4,2,6,1,3]
+Output: 1
+
+Example 2:
+Input: root = [1,0,48,null,null,12,49]
+Output: 1
+
+Constraints:
+The number of nodes in the tree is in the range [2, 104].
+0 <= Node.val <= 105
+
+Note: This question is the same as 783: https://leetcode.com/problems/minimum-distance-between-bst-nodes/
+
 """
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from app.common.tree_node import TreeNode
 
-class Solution:
-    def getMinimumDifference(self, root: TreeNode):
-        minDiff = float('inf')
-        prevNod = None
+class MinimumAbsoluteDifferenceInBST:
+    def get_minimum_difference(self, root: TreeNode):
+        min_diff = float('inf')
+        prev_nod = None
 
-        self.dfs(root, minDiff, prevNod)
-        return minDiff
+        self.dfs(root, min_diff, prev_nod)
+        return min_diff
 
-    def dfs(self, node: TreeNode, minDiff, prevNod):
+    def dfs(self, node: TreeNode, min_diff, prev_nod):
         if node is None:
             return
 
-        self.dfs(node.left)
+        self.dfs(node.left, min_diff, prev_nod)
 
-        if prevNod != None:
-            minDiff = min(minDiff, abs(node.val - prevNod))
-        prevNod = node.val
+        if prev_nod != None:
+            min_diff = min(min_diff, abs(node.val - prev_nod))
+        prev_nod = node.val
 
-        self.dfs(node.right)
-
+        self.dfs(node.right, min_diff, prev_nod)

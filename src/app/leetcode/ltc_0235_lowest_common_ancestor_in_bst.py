@@ -2,16 +2,13 @@
 # method: iteration through each node, when p and q are in different subtrees, current node is LCA
 
 # Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
 
-class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+from app.common.tree_node import TreeNode
+
+class LowestCommonAncestorInBST:
+    def solution(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
         cur = root
-        
+
         while cur:
             if p.val > cur.val and q.val > cur.val:
                 cur = cur.right

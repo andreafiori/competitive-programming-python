@@ -6,22 +6,22 @@ Keep track of max freq in sliding window and check if size of window - max freq 
 
 """
 
-class LongestRepeatingCharacterReplacement
+class LongestRepeatingCharacterReplacement:
     def solution(self, s: str, k: int) -> int:
-        ptrL = 0
-        ptrR = 0
+        ptr_l = 0
+        ptr_r = 0
         longest = 0
         freq = dict()
         max_freq = 0
 
-        for ptrR in range(len(s)):
-            freq[s[ptrR]] = 1 + freq.get(s[ptrR], 0)
-            max_freq = max(max_freq, freq[s[ptrR]])
+        for ptr_r in range(len(s)):
+            freq[s[ptr_r]] = 1 + freq.get(s[ptr_r], 0)
+            max_freq = max(max_freq, freq[s[ptr_r]])
 
-            if (ptrR - ptrL + 1) - max_freq > k:
-                freq[s[ptrL]] -= 1
-                ptrL += 1
+            if (ptr_r - ptr_l + 1) - max_freq > k:
+                freq[s[ptr_l]] -= 1
+                ptr_l += 1
 
-            longest = max(longest, (ptrR - ptrL + 1))
+            longest = max(longest, (ptr_r - ptr_l + 1))
 
         return longest

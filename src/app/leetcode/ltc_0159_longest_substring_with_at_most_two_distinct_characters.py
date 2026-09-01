@@ -1,0 +1,22 @@
+"""
+Longest Substring with At Most Two Distinct Characters | leetcode 159 | https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
+"""
+
+class LongestSubstringTwoDistincttion:
+    def calculate(self, s: str) -> int:
+        """
+        :type s: str
+        :rtype: int
+        """
+        i, j, max_len = 0, -1, 0
+        # i for start, k for end, j for latest pos contains different character from k
+        for k in range(1, len(s)):
+            if s[k] == s[k - 1]:
+                continue
+            if j >= 0 and s[j] != s[k]:
+                max_len = max(k - i, max_len)
+                # update i
+                i = j + 1
+            # update
+            j = k - 1
+        return max(len(s) - i, max_len)

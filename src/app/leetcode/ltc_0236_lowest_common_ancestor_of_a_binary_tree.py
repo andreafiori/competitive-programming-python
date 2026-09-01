@@ -28,13 +28,10 @@ Constraints:
 
 """
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+from app.common.tree_node import TreeNode
 
 class LowestCommonAncestor:
+
     def solution_one(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
         """
         :type root: TreeNode
@@ -43,18 +40,8 @@ class LowestCommonAncestor:
         :rtype: TreeNode
         """
         self.ans = None
-        self.lowestCommonAncestorHelper(root, p, q)
+        self.lowest_common_ancestor_helper(root, p, q)
         return self.ans
-
-    def lowestCommonAncestorHelper(self, node: TreeNode, p, q):
-            if not node:
-                return False
-            left = self.lowestCommonAncestorHelper(node.left)
-            right = self.lowestCommonAncestorHelper(node.right)
-            mid = node == p or node == q
-            if mid + left + right >= 2:
-                self.ans = node
-            return mid or left or right
 
     def solution_two(self, root, p, q):
         """
@@ -93,3 +80,13 @@ class LowestCommonAncestor:
         while q not in ancestors:
             q = parent[q]
         return q
+
+    def lowest_common_ancestor_helper(self, node: TreeNode, p: TreeNode, q: TreeNode) -> bool:
+        if not node:
+            return False
+        left = self.lowest_common_ancestor_helper(node.left, p, q)
+        right = self.lowest_common_ancestor_helper(node.right, p, q)
+        mid = node == p or node == q
+        if mid + left + right >= 2:
+            self.ans = node
+        return mid or left or right

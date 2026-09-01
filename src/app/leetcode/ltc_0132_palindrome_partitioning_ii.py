@@ -1,5 +1,9 @@
-class PalindromePartitioningII
-    def minCut(self, s):
+"""
+Palindrome Partitioning II | leetcode 132 | https://leetcode.com/problems/palindrome-partitioning-ii/
+
+"""
+class PalindromePartitioningII:
+    def min_cut(self, s):
         """
         :type s: str
         :rtype: int

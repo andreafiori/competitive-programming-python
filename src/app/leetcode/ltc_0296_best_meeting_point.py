@@ -17,6 +17,53 @@ The meeting point can be any cell in the grid (not necessarily a cell with value
 """
 
 class BestMeetingPoint:
+
+    def min_distance_id(self, points):
+        """
+        Minimum distance ID
+        :param points:
+        :return:
+        """
+        distance = 0
+        i, j = 0, len(points) - 1
+        while i < j:
+            distance += points[j] - points[i]
+            i += 1
+            j -= 1
+        return distance
+
+    def min_total_distance(self, grid):
+        """
+        Minimum total distance
+        :param grid:
+        :return:
+        """
+        rows = self.collect_rows(grid)
+        cols = self.collect_cols(grid)
+
+        return self.min_distance_id(rows) + self.min_distance_id(cols)
+
+    def collect_rows(self, grid):
+        rows = []
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == 1:
+                    rows.append(i)
+        return rows
+
+    def collect_cols(self, grid):
+        """
+        Collect cols
+        :param grid:
+        :return:
+        """
+        cols = []
+        for j in range(len(grid[0])):
+            for i in range(len(grid)):
+                if grid[i][j] == 1:
+                    cols.append(j)
+        return cols
+
     # def minTotalDistance(self, grid):
     #     """
     #     :type grid: List[List[int]]
@@ -34,56 +81,3 @@ class BestMeetingPoint:
     #     cols.sort()
     #     col = cols[len(cols) / 2]
     #     return self.minDistance1D(rows, row) + self.minDistance1D(cols, col)
-
-    # def minDistance1D(self, points, origin):
-    #     distance = 0
-    #     for point in points:
-    #         distance += abs(point - origin)
-    #     return distance
-
-    def minDistance1D(self, points):
-        """
-        Minimum distance ID
-        :param points:
-        :return:
-        """
-        distance = 0
-        i, j = 0, len(points) - 1
-        while i < j:
-            distance += points[j] - points[i]
-            i += 1
-            j -= 1
-        return distance
-
-    def minTotalDistance(self, grid):
-        """
-        Minimum total distance
-        :param grid:
-        :return:
-        """
-        rows = self.collectRows(grid)
-        cols = self.collectCols(grid)
-        row = rows[len(rows) / 2]
-        col = cols[len(cols) / 2]
-        return self.minDistance1D(rows) + self.minDistance1D(cols)
-
-    def collectRows(self, grid):
-        rows = []
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] == 1:
-                    rows.append(i)
-        return rows
-
-    def collectCols(self, grid):
-        """
-        Collect cols
-        :param grid:
-        :return:
-        """
-        cols = []
-        for j in range(len(grid[0])):
-            for i in range(len(grid)):
-                if grid[i][j] == 1:
-                    cols.append(j)
-        return cols

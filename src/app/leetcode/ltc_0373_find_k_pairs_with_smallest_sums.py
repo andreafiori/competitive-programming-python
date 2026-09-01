@@ -1,0 +1,29 @@
+"""
+Find K Pairs with Smallest Sums | leetcode 373 | https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+
+https://discuss.leetcode.com/topic/50450/slow-1-liner-to-fast-solutions
+"""
+
+import heapq
+
+class FindKPairsWithSmallestSums:
+    def k_smallest_pairs(self, nums1: list[int], nums2: list[int], k: int) -> list[list[int]]:
+        """
+        :type nums1: list[int]
+        :type nums2: list[int]
+        :type k: int
+        :rtype: list[list[int]]
+        """
+        queue = []
+        def push(i, j):
+            if i < len(nums1) and j < len(nums2):
+                heapq.heappush(queue, [nums1[i] + nums2[j], i, j])
+        push(0, 0)
+        pairs = []
+        while queue and len(pairs) < k:
+            _, i, j = heapq.heappop(queue)
+            pairs.append([nums1[i], nums2[j]])
+            push(i, j + 1)
+            if j == 0:
+                push(i + 1, 0)
+        return pairs

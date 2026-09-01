@@ -1,5 +1,5 @@
 """
-Island Perimeter | https://leetcode.com/problems/island-perimeter/
+Island Perimeter | Leetcode 463 | Easy | https://leetcode.com/problems/island-perimeter/
 
 You are given row x col grid representing a map where grid[i][j] = 1 represents land and grid[i][j] = 0 represents water.
 
@@ -27,27 +27,25 @@ Constraints:
     grid[i][j] is 0 or 1.
     There is exactly one island in grid.
 
-
 """
 
 class IslandPerimeter:
-    def is_land_perimeter(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-        row_num = len(grid)
-        if row_num == 0 or len(grid[0]) == 0:
+    def solution(self, grid: list[list[int]]) -> int:
+        if not grid or not grid[0]:
             return 0
-        islands, overlaps = 0, 0
-        col_num = len(grid[0])
-        for i in range(row_num):
-            for j in range(col_num):
-                if (grid[i][j] == 1):
-                    islands += 1
-                    # careful about right and down
-                    if (i < row_num - 1 and grid[i + 1][j] == 1):
-                        overlaps += 1
-                    if (j < col_num - 1 and grid[i][j + 1] == 1):
-                        overlaps += 1
-        return islands * 4 - overlaps * 2
+
+        perimeter = 0
+        rows, cols = len(grid), len(grid[0])
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 1:
+                    perimeter += 4
+
+                    if r + 1 < rows and grid[r + 1][c] == 1:
+                        perimeter -= 2
+
+                    if c + 1 < cols and grid[r][c + 1] == 1:
+                        perimeter -= 2
+
+        return perimeter

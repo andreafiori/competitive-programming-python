@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/add-digits/
+Add Digits | leetcode 258 | Easy | https://leetcode.com/problems/add-digits/
 
 Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
 
@@ -14,7 +14,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Digital_root
 """
 
 class AddDigits:
-    def add(self, num: int) -> int:
+    def solution(self, num: int) -> int:
         """
         Add digits
         :type num: int

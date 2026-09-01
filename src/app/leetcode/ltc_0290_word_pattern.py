@@ -1,26 +1,28 @@
-# word pattern | leetcode 290 | https://leetcode.com/problems/word-pattern/
-# create a vocabulary to match pattern and a seen hashset to record seen words
+"""
+Word pattern | leetcode 290 | https://leetcode.com/problems/word-pattern/
 
-class Solution:
-    def wordPattern(self, pattern: str, s: str) -> bool:
-        vocab = dict()
-        seens = dict()
-        sent = s.split(" ")
+"""
 
-        if len(sent) != len(pattern):
+class WordPattern:
+
+    def solution(self, pattern: str, str: str) -> bool:
+        """
+        :type pattern: str
+        :type str: str
+        :rtype: bool
+        """
+        if pattern is None or str is None:
+            return True
+        # double map
+        words_to_pattern = {}
+        pattern_to_words = {}
+        word_list = str.split(' ')
+        if len(word_list) != len(pattern):
             return False
-
-        for i in range(len(pattern)):
-            i_patt = pattern[i]
-            i_sent = sent[i]
-
-            if vocab.get(i_patt):
-                if vocab[i_patt] != i_sent:
-                    return False
-            else:
-                if seens.get(i_sent):
-                    return False
-                vocab[i_patt] = i_sent
-                seens[i_sent] = True
-
+        for index, word in enumerate(word_list):
+            curr_p = pattern[index]
+            if pattern_to_words.get(curr_p, word) != word or words_to_pattern.get(word, curr_p) != curr_p:
+                return False
+            pattern_to_words[curr_p] = pattern_to_words.get(curr_p, word)
+            words_to_pattern[word] = words_to_pattern.get(word, curr_p)
         return True

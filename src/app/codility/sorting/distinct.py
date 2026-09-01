@@ -1,9 +1,7 @@
 """
-Distinct
+Distinct | https://app.codility.com/programmers/lessons/6-sorting/distinct/
 
 Compute number of distinct values in an array.
-
-https://app.codility.com/programmers/lessons/6-sorting/distinct/
 
 ----------------
 # My Analysis
@@ -15,7 +13,7 @@ Bit easy in Python.  Just add each value as the key to a dictionary and return a
 
 Write a function
 
-    def solution(A)
+    def solution(a)
 
 that, given a zero-indexed array A consisting of N integers, returns the number of distinct values in array A.
 
@@ -39,16 +37,15 @@ Elements of input arrays can be modified.
 """
 
 class Distinct:
-    def solution(self, A):
+    def solution(self, a: list) -> int:
         """
-        :param A: array of integers
+        :param a: array of integers
         :return: an integer
         """
         # count the number of keys created
         distinct = {}
         # update the dictionary using the value as the key
-        for val in A:
+        for val in a:
             distinct[val] = True
         # return the number of keys
         return len(distinct.keys())
-

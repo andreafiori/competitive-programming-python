@@ -1,5 +1,5 @@
 """
-412. Fizz Buzz | https://leetcode.com/problems/fizz-buzz/
+Fizz Buzz | Leetcode 412 | https://leetcode.com/problems/fizz-buzz/
 
 Given an integer n, return a string array answer (1-indexed) where:
 
@@ -26,44 +26,52 @@ Constraints:
 """
 
 class FizzBuzz:
-    # def fizzBuzz(self, n):
-    #     """
-    #     :type n: int
-    #     :rtype: List[str]
-    #     """
-    #     res = []
-    #     for i in range(1, n + 1):
-    #         if i % 3 == 0:
-    #             if i % 5 == 0:
-    #                 res.append('FizzBuzz')
-    #             else:
-    #                 res.append('Fizz')
-    #         elif i % 5 == 0:
-    #             res.append('Buzz')
-    #         else:
-    #             res.append(str(i))
-    #     return res
-
-    # def fizzBuzz(self, n):
-    #     """
-    #     :type n: int
-    #     :rtype: List[str]
-    #     """
-    #     res = []
-    #     for i in range(1, n + 1):
-    #         curr = ''
-    #         if i % 3 == 0:
-    #             curr += 'Fizz'
-    #         if i % 5 == 0:
-    #             curr += 'Buzz'
-    #         if not len(curr):
-    #             curr += str(i)
-    #         res.append(curr)
-    #     return res
-
-    def fizzBuzz(self, n):
+    def solution_one(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
         return [str(i) * (i % 3 != 0 and i % 5 != 0) + "Fizz" * (i % 3 == 0) + "Buzz" * (i % 5 == 0)
                 for i in range(1, n + 1)]
 
-    # def fizzBuzz(self, n):
-    #     return ['Fizz' * (not i % 3) + 'Buzz' * (not i % 5) or str(i) for i in range(1, n+1)]
+    def solution_two(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        return ['Fizz' * (not i % 3) + 'Buzz' * (not i % 5) or str(i) for i in range(1, n+1)]
+
+    def solution_three(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        res = []
+        for i in range(1, n + 1):
+            if i % 3 == 0:
+                if i % 5 == 0:
+                    res.append('FizzBuzz')
+                else:
+                    res.append('Fizz')
+            elif i % 5 == 0:
+                res.append('Buzz')
+            else:
+                res.append(str(i))
+        return res
+
+    def solution_four(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        res = []
+        for i in range(1, n + 1):
+            curr = ''
+            if i % 3 == 0:
+                curr += 'Fizz'
+            if i % 5 == 0:
+                curr += 'Buzz'
+            if not len(curr):
+                curr += str(i)
+            res.append(curr)
+        return res

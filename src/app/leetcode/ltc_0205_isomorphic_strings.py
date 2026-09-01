@@ -1,5 +1,5 @@
 """
-Isomorphic Strings | https://leetcode.com/problems/isomorphic-strings/
+Isomorphic Strings | Medium | https://leetcode.com/problems/isomorphic-strings/
 
 Given two strings s and t, determine if they are isomorphic.
 
@@ -27,42 +27,18 @@ Example 3:
 """
 
 class IsomorphicStrings:
-    # def isIsomorphic(self, s, t):
-    #     """
-    #     :type s: str
-    #     :type t: str
-    #     :rtype: bool
-    #     """
-    #     # check every char
-    #     if len(s) != len(t):
-    #         return False
-    #     check = [False] * len(s)
-    #     for i in range(len(s)):
-    #         if check[i]:
-    #             continue
-    #         temp = s.count(s[i])
-    #         if temp != t.count(t[i]):
-    #             return False
-    #         if temp >= 2:
-    #             for j in range(i + 1, len(s)):
-    #                 if s[j] == s[i]:
-    #                     check[j] = True
-    #                     if t[j] != t[i]:
-    #                         return False
-    #         check[i] = True
-    #     return True
 
-    def isIsomorphic(self, s, t):
+    def solution(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
         ls = len(s)
-        mapStoT = [0] * 127
-        mapTtoS = [0] * 127
+        map_s_to_t = [0] * 127
+        map_t_to_s = [0] * 127
         for i in range(ls):
             s_num, t_num = ord(s[i]), ord(t[i])
-            if mapStoT[s_num] == 0 and mapTtoS[t_num] == 0:
-                mapStoT[s_num] = t_num
-                mapTtoS[t_num] = s_num
-            elif mapTtoS[t_num] != s_num or mapStoT[s_num] != t_num:
+            if map_s_to_t[s_num] == 0 and map_t_to_s[t_num] == 0:
+                map_s_to_t[s_num] = t_num
+                map_t_to_s[t_num] = s_num
+            elif map_t_to_s[t_num] != s_num or map_s_to_t[s_num] != t_num:
                 return False
         return True

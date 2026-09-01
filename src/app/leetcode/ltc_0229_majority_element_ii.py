@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/majority-element-ii/
+Majority Element II | leetcode 229 | https://leetcode.com/problems/majority-element-ii/
 
 Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
 
@@ -21,8 +21,11 @@ Constraints:
 
 """
 
-class MajorityElementII
-    def solution(self, nums):
+from typing import List
+
+
+class MajorityElementII:
+    def solution(self, nums: List[int]) -> List[int]:
         # O(1) space
         ls = len(nums)
         res = []
@@ -39,31 +42,30 @@ class MajorityElementII
             check_value.append(nums[i])
         return res
 
-    # def majorityElement(self, nums):
-    #     # using dict
-    #     count_hash = {}
-    #     res = []
-    #     for i in nums:
-    #         try:
-    #             count_hash[i] += 1
-    #         except KeyError:
-    #             count_hash[i] = 1
-    #     for k, v in count_hash.iteritems():
-    #         if v > len(nums) / 3:
-    #             res.append(k)
-    #     return res
+    def solution_two(self, nums: List[int]) -> List[int]:
+        # using dict
+        count_hash = {}
+        res = []
+        for i in nums:
+            try:
+                count_hash[i] += 1
+            except KeyError:
+                count_hash[i] = 1
+        for k, v in count_hash.items():
+            if v > len(nums) / 3:
+                res.append(k)
+        return res
 
-    # def majorityElement(self, nums):
-    #     """
-    #     :type nums: List[int]
-    #     :rtype: List[int]
-    #     """
-    #     #https://leetcode.com/discuss/76542/easy-python-solution
-    #     tmp = {}
-    #     res = []
-    #     for n in list(set(nums)):
-    #         tmp[n] = nums.count(n)
-    #     for k, v in tmp.iteritems():
-    #         if v > len(nums) / 3:
-    #             res.append(k)
-    #     return res
+    def solution_three(self, nums: List[int]) -> List[int]:
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        tmp = {}
+        res = []
+        for n in list(set(nums)):
+            tmp[n] = nums.count(n)
+        for k, v in tmp.items():
+            if v > len(nums) / 3:
+                res.append(k)
+        return res

@@ -22,15 +22,12 @@ Complexity:
 """
 
 class CountDiv:
-    def solution(self, A: int, B: int, K: int) -> int:
+    def solution(self, a: int, b: int, k: int) -> int:
         """
-        :param A: start integer
-        :param B: end integer
-        :param K: divisor integer
-        :return: count of integers A..B divisible by K
+        :param a: start integer
+        :param b: end integer
+        :param k: divisor integer
+        :return: count of integers a..b divisible by k
         """
         # just depends whether A is part of the count itself, or not
-        if A % K == 0:
-            return B//K - A//K + 1
-        else:
-            return B//K - A//K
+        return b//k - a//k + 1 if a % k == 0 else b//k - a//k

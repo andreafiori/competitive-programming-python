@@ -1,9 +1,8 @@
 """
-MaxProductOfThree
+MaxProductOfThree | https://codility.com/programmers/task/max_product_of_three/
 
 Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R)
 
-https://codility.com/programmers/task/max_product_of_three/
 ----------------
 # My Commentary
 
@@ -15,9 +14,7 @@ a positive number to provide a greater product than multiplying the positives to
 
 eg:
 [-100, -100, -100, 0, 50, 50, 50]
-The product of the top 3 is 125000, but the product of the bottom two (-100, 100)
- with the top one (50) is 500000!
-
+The product of the top 3 is 125000, but the product of the bottom two (-100, 100) with the top one (50) is 500000!
 
 --------------------------------------------------------------------------------------------------------------------
 # Problem Description
@@ -70,15 +67,15 @@ Elements of input arrays can be modified.
 """
 
 class MaxProductOfThree:
-    def solution(self, A):
+    def solution(self, a) -> int:
         """
-        :param A: array of integers
+        :param a: array of integers
         :return: an integer
         """
         # sort them, then just use the last three!
-        A.sort()
-        if A[0] < 0 and A[1] < 0 and A[-1] > 0:
+        a.sort()
+        if a[0] < 0 and a[1] < 0 and a[-1] > 0:
             # excepting that two negatives make a positive...
-            return max(A[0] * A[1] * A[-1], A[-3] * A[-2] * A[-1])
+            return max(a[0] * a[1] * a[-1], a[-3] * a[-2] * a[-1])
         else:
-            return A[-3] * A[-2] * A[-1]
+            return a[-3] * a[-2] * a[-1]

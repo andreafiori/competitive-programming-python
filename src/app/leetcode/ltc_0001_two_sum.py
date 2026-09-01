@@ -1,4 +1,5 @@
 """
+Two Sum | leetcode 1 | https://leetcode.com/problems/two-sum
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -24,15 +25,13 @@ Constraints:
     -109 <= nums[i] <= 109
     -109 <= target <= 109
     Only one valid answer exists.
-
-https://leetcode.com/problems/two-sum
-
 """
 
 from typing import List
 
-class TwoSum
-    def solution(self, nums, target):
+class TwoSum:
+
+    def solution(self, nums: List[int], target: int) -> List[int]:
         # two point
         nums_index = [(v, index) for index, v in enumerate(nums)]
         nums_index.sort()
@@ -54,10 +53,10 @@ class TwoSum
         return []
 
     def solution_three(self, nums: List[int], target: int) -> List[int]:
-        prevMap = {}
+        prev_map = {}
 
         for i, n in enumerate(nums):
             diff = target - n
-            if diff in prevMap:
-                return [prevMap[diff], i]
-            prevMap[n] = i
+            if diff in prev_map:
+                return [prev_map[diff], i]
+            prev_map[n] = i

@@ -27,10 +27,3 @@ class TestCyclicRotation:
     def test_empty(self, cyclic_rotation):
         empty = []
         assert cyclic_rotation.rotate(empty, 5) == []
-
-    # def test_random(self):
-    #     ARRAY_RANGE = (-1000, 1000)
-    #     INT_RANGE = (0, 100)
-    #     N = random.randint(*INT_RANGE)
-    #     K = random.randint(*INT_RANGE)
-    #     A = [random.randint(*ARRAY_RANGE) for i in range(0, N)]

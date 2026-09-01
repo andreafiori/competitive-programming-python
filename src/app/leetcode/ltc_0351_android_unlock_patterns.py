@@ -14,8 +14,7 @@ previously selected in the pattern. No jumps through non selected key is allowed
 https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958
 
 """
-
-class AndroidUnlockPatterns
+class AndroidUnlockPatterns:
     def solution(self, m: int, n: int):
         """
         :type m: int

@@ -1,9 +1,8 @@
 """
-Number of Disc Intersections
+Number of Disc Intersections | https://codility.com/programmers/task/number_of_disc_intersections/
 
 Compute the number of intersections in a sequence of discs.
 
-https://codility.com/programmers/task/number_of_disc_intersections/
 ----------------
 # My Commentary
 
@@ -21,7 +20,6 @@ by ones inside the while loop-that gets messy-and do snip one off the total incr
 -------------------
 # Problem Description
 
-
 We draw N discs on a plane. The discs are numbered from 0 to N - 1. A zero-indexed array A of N non-negative
 integers, specifying the radiuses of the discs, is given. The J-th disc is drawn with its center at (J, 0)
 and radius A[J].
@@ -30,12 +28,12 @@ We say that the J-th disc and K-th disc intersect if J <> K and the J-th and K-t
 point (assuming that the discs contain their borders).
 
 The figure below shows discs drawn for N = 6 and A as follows:
-  A[0] = 1
-  A[1] = 5
-  A[2] = 2
-  A[3] = 1
-  A[4] = 4
-  A[5] = 0
+    A[0] = 1
+    A[1] = 5
+    A[2] = 2
+    A[3] = 1
+    A[4] = 4
+    A[5] = 0
 
 There are eleven (unordered) pairs of discs that intersect, namely:
 
@@ -70,13 +68,13 @@ class NumberOfDiscIntersections:
     # RANGE_N = (0, 100000)
     MAX_INTERSECTIONS = 10000000
 
-    def slow_solution(self, A):
+    def slow_solution(self, a):
         """
         Brute force - visit and test every combination - O(N**2)
         56% (100% correct, 12% performance)
         """
         minmax = []
-        for k, v in enumerate(A):
+        for k, v in enumerate(a):
             minmax.append([k-v, k+v])
         minmax.sort()
 
@@ -89,7 +87,7 @@ class NumberOfDiscIntersections:
     def _intersect(self, ja, jb, ka, kb):
             return ka <= jb or jb >= ka or (ka >= ja and kb <= jb)
 
-    def fast_solution(self, A):
+    def fast_solution(self, a):
         """
         100% O(N*log(N))
         Take advantage of the fact that, for accounting purposes, it isn't necessary to keep specific
@@ -99,7 +97,7 @@ class NumberOfDiscIntersections:
         """
         # create separate lists of all the start points and the end points, and sort them
         starts, ends = [], []
-        for point, radius in enumerate(A):
+        for point, radius in enumerate(a):
             starts.append(point - radius)
             ends.append(point + radius)
         starts.sort()

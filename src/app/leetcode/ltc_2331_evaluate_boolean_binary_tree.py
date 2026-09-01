@@ -1,16 +1,11 @@
 """
 Evaluate boolean binary tree | leetcode 2331 | https://leetcode.com/problems/evaluate-boolean-binary-tree/
-#ethod: dfs, evaluate left and/or right, return node's value
 
 """
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from app.common.tree_node import TreeNode
 
-class Solution:
+class EvaluateBooleanBinaryTree:
     def evaluateTree(self, node: TreeNode):
         if node.left is None and node.right is None:
             return node.val

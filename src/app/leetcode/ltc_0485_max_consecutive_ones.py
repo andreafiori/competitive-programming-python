@@ -1,4 +1,6 @@
 """
+Max Consecutive Ones | leetcode 485 | https://leetcode.com/problems/max-consecutive-ones/
+
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
 Example 1:
@@ -20,8 +22,8 @@ Constraints:
 
 from typing import List
 
-class FindMaxConsecutiveOnes
-    def solution(self, nums: List[int]):
+class FindMaxConsecutiveOnes:
+    def solution(self, nums: List[int]) -> int:
         """
         :type nums: List[int]
         :rtype: int
@@ -35,6 +37,5 @@ class FindMaxConsecutiveOnes
                 if curr > ans:
                     ans = curr
             else:
-                # Add 1 to curr when encounter 1
                 curr = 0
         return ans
