@@ -30,13 +30,13 @@ python -m venv .venv
 
 ### 2. Activate the Virtual Environment
 
-**Windows**
+#### **Windows**
 
 ```bash
 .venv\Scripts\activate
 ```
 
-**macOS / Linux**
+#### **macOS / Linux**
 
 ```bash
 source .venv/bin/activate

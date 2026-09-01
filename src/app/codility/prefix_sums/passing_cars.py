@@ -63,7 +63,6 @@ Elements of input arrays can be modified.
 """
 
 class PassingCars:
-    # MAX_INT = int(100000)
     MAX_PAIRS = int(1e9)
 
     def solution(self, A):

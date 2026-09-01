@@ -1,19 +1,19 @@
 """
-GenomicRangeQuery | https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/
+Genomic Range Query | https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/
 
 Find the minimal nucleotide from a range of sequence DNA
 
 ## Analysis
 
 If you're not fussy, this is a straightforward problem: you go through every query and pull out the sliced sequence and
-  inspect it.  A quick sort to identify the least impact nucleo and you're done. Right?  See 'slow_solution' below.
-  It scores about 65/100.
+inspect it.  A quick sort to identify the least impact nucleo and you're done. Right?  See 'slow_solution' below.
+It scores about 65/100.
 
 No. Not done.
 
 The straightforward solution visits every nucleotide in every slice. If the slices overlap a lot, then
-  the solution revisits the same nucleotide a lot.  If you could arrange the solution to
-  only visit each nucleotide once, then it would be much faster.
+the solution revisits the same nucleotide a lot.  If you could arrange the solution to
+only visit each nucleotide once, then it would be much faster.
 
 But how?
 
@@ -23,8 +23,8 @@ need into a directly accessible form; namely, without stepping through any part 
 Enter the "prefix sum" pattern.
 
 For this problem, we create an array for each type of item, then at each step through the sequence, record
- the count of how many of each type we've seen.  When we're done, for the example sequence
- "CAGCCTA", we finish up with:
+the count of how many of each type we've seen.  When we're done, for the example sequence
+"CAGCCTA", we finish up with:
 
     sumA = [0,0,1,1,1,1,1,2]
     sumC = [0,1,1,1,2,3,3,3]
@@ -32,20 +32,17 @@ For this problem, we create an array for each type of item, then at each step th
     sumT = [0,0,0,0,0,0,1,1]
 
 Now it's plain as day where each nucleo of each type appears.  So, when we can ask "Are there any
- 'C' types between points 2 and 4?" we can lookup sumC for the answer:
-  At point 2 we had seen 1 type C nucleo, and at point 4 we'd seen 2.  We determine
-  there is exactly 1 (2-1) type C nucleo between points 2 and 4 only by looking at the two end-points,
-  saving us from having to inspect every point between them.
+'C' types between points 2 and 4?" we can lookup sumC for the answer:
+At point 2 we had seen 1 type C nucleo, and at point 4 we'd seen 2.  We determine
+there is exactly 1 (2-1) type C nucleo between points 2 and 4 only by looking at the two end-points,
+saving us from having to inspect every point between them.
 
 So now we don't need the original sequence. Instead we can look at the sum for each endpoint
- and comparing the values.  Thus we can quickly identify which nucleotides appear in each query
- and determine the 'minimum impact' value within each.
+and comparing the values.  Thus we can quickly identify which nucleotides appear in each query
+and determine the 'minimum impact' value within each.
 
 See 'fast_solution'. Scores 100/100.
 """
-
-import unittest
-import random
 
 class GenomicRangeQuery:
 
