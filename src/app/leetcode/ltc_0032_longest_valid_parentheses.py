@@ -18,7 +18,6 @@ Input: s = ""
 Output: 0
 
 Constraints:
-
 0 <= s.length <= 3 * 104
 s[i] is '(', or ')'.
 

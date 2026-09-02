@@ -1,5 +1,6 @@
 """
-Passing Cars | https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/
+Passing Cars | https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/
+
 Count the number of passing cars on the road.
 
 ***
@@ -24,11 +25,11 @@ The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 <=
 traveling to the east and Q is traveling to the west.
 
 For example, consider array A such that:
-  A[0] = 0
-  A[1] = 1
-  A[2] = 0
-  A[3] = 1
-  A[4] = 1
+    A[0] = 0
+    A[1] = 1
+    A[2] = 0
+    A[3] = 1
+    A[4] = 1
 
 We have five pairs of passing cars: (0, 1), (0, 3), (0, 4), (2, 3), (2, 4).
 
@@ -41,11 +42,11 @@ that, given a non-empty zero-indexed array A of N integers, returns the number o
 The function should return -1 if the number of pairs of passing cars exceeds 1,000,000,000.
 
 For example, given:
-  A[0] = 0
-  A[1] = 1
-  A[2] = 0
-  A[3] = 1
-  A[4] = 1
+    A[0] = 0
+    A[1] = 1
+    A[2] = 0
+    A[3] = 1
+    A[4] = 1
 
 the function should return 5, as explained above.
 

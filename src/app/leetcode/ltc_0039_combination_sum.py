@@ -4,44 +4,33 @@ Combination Sum | Leetcode 39 | Medium | https://leetcode.com/problems/combinati
 """
 
 class CombinationSum:
-    # def combinationSum(self, candidates, target):
-    #     """
-    #     :type candidates: List[int]
-    #     :type target: int
-    #     :rtype: List[List[int]]
-    #     """
-    #     candidates.sort()
-    #     return self.getcombinationSum(candidates, [], 0, target)
 
-    # def getcombinationSum(self, candidates, prefix, curr, target):
-    #     if len(prefix) == 0:
-    #         max_value = candidates[0]
-    #     else:
-    #         max_value = prefix[-1]
-    #     res = []
-    #     for i in range(len(candidates)):
-    #         if candidates[i] >= max_value:
-    #             if curr + candidates[i] == target:
-    #                 res.append(prefix+[candidates[i]])
-    #             elif curr + candidates[i] < target:
-    #                 res.extend(self.getcombinationSum(candidates, prefix+[candidates[i]], curr + candidates[i], target))
-    #             else:
-    #                 pass
-    #     return res
+    def solution(self, candidates: list[int], target: int) -> list[list[int]]:
+        """
+        Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order.
 
+        The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.
 
-    def solution(self, candidates, target):
+        It is guaranteed that the number of unique combinations that sum up to target is less than 150 combinations for the given input.
+
+        :param candidates: List[int] - A list of distinct integers.
+        :param target: int - The target integer.
+        :return: List[List[int]] - A list of all unique combinations that sum to target.
+        """
+        result = []
         candidates.sort()
-        dp = [[] for _ in range(target + 1)]
-        dp[0].append([])
-        for i in range(1, target + 1):
-            for j in range(len(candidates)):
-                if candidates[j] > i:
-                    break
-                for k in range(len(dp[i - candidates[j]])):
-                    temp = dp[i - candidates[j]][k][:]
-                    if len(temp) > 0 and temp[-1] > candidates[j]:
-                        continue
-                    temp.append(candidates[j])
-                    dp[i].append(temp)
-        return dp[target]
+
+        def backtrack(remaining, combination, start):
+            if remaining == 0:
+                result.append(list(combination))
+                return
+            elif remaining < 0:
+                return
+
+            for i in range(start, len(candidates)):
+                combination.append(candidates[i])
+                backtrack(remaining - candidates[i], combination, i)
+                combination.pop()
+
+        backtrack(target, [], 0)
+        return result

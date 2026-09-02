@@ -5,10 +5,10 @@ from app.codility.prefix_sums.passing_cars import PassingCars
 
 @pytest.fixture
 def passing_cars():
-    """Provide a fresh PassingCars instance for each test."""
     return PassingCars()
 
 class TestPassingCars:
+
     def test_solution_is_zero(self, passing_cars):
         assert passing_cars.solution([0]) == 0
         assert passing_cars.solution([1]) == 0
