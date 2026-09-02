@@ -1,6 +1,22 @@
 """
 LeetCode Problem: 42. Trapping Rain Water | https://leetcode.com/problems/trapping-rain-water/
 
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+Example 1:
+Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
+
+Example 2:
+Input: height = [4,2,0,3,2,5]
+Output: 9
+
+Constraints:
+n == height.length
+1 <= n <= 2 * 104
+0 <= height[i] <= 105
+
 """
 
 class TrappingRainWater:
@@ -48,27 +64,3 @@ class TrappingRainWater:
             if height[index] > 0:
                 step += height[index]
         return res - step
-
-    # def trap(self, height):
-    #     ls = len(height)
-    #     if ls == 0:
-    #         return 0
-    #     height.append(0)
-    #     height.insert(0, 0)
-    #     left = [0] * ls
-    #     right = [0] * ls
-    #     cur_left, cur_right = 0, 0
-    #     for i in range(1, ls + 1):
-    #         cur_left = max(cur_left, height[i - 1])
-    #         # left[i] store max bar from left
-    #         left[i - 1] = cur_left
-    #     for i in reversed(range(ls)):
-    #         cur_right = max(cur_right, height[i + 1])
-    #         # right[i] store max bar from right
-    #         right[i] = cur_right
-    #     res = 0
-    #     for i in range(ls):
-    #         curr = min(left[i], right[i])
-    #         if curr > height[i]:
-    #             res += curr - height[i]
-    #     return res
