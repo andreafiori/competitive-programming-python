@@ -1,50 +1,44 @@
 """
 Lowest Common Ancestor of a Binary Search Tree | leetcode 235 | https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
 
+Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+
+Example 1:
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 6
+Explanation: The LCA of nodes 2 and 8 is 6.
+
+Example 2:
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+Output: 2
+Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+
+Example 3:
+Input: root = [2,1], p = 2, q = 1
+Output: 2
+
+Constraints:
+
+The number of nodes in the tree is in the range [2, 105].
+-109 <= Node.val <= 109
+All Node.val are unique.
+p != q
+p and q will exist in the BST.
+
 """
+
+from app.common.tree_node import TreeNode
 
 class LowestCommonAncestorOfABinarySearchTree:
 
-    # def lowestCommonAncestor(self, root, p, q):
-    #     """
-    #     :type root: TreeNode
-    #     :type p: TreeNode
-    #     :type q: TreeNode
-    #     :rtype: TreeNode
-    #     """
-    #     # get all possible paths
-    #     paths = {}
-    #     self.get_path(paths, root)
-    #     # compare paths of p and q
-    #     # return the last identical node
-    #     p_path, q_path = paths[p][::-1], paths[q][::-1]
-    #     ls = min(len(p_path), len(q_path))
-    #     pos = 0
-    #     last = root
-    #     while pos < ls:
-    #         if p_path[pos] != q_path[pos]:
-    #             return last
-    #         last = p_path[pos]
-    #         pos += 1
-    #     return last
-    #
-    #
-    # def get_path(self, paths, node, curr=[]):
-    #     # get all possible path
-    #     if node is not None:
-    #         paths[node] = [node] + curr
-    #         if node.left is not None:
-    #             self.get_path(paths, node.left, paths[node])
-    #         if node.right is not None:
-    #             self.get_path(paths, node.right, paths[node])
-
-    def lowest_common_ancestor(self, root, p, q):
-        # use the BST to reduce the search space
+    def solution(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode | None:
         if p is None or q is None or root is None:
             return None
         if p.val < root.val and q.val < root.val:
-            return self.lowest_common_ancestor(root.left, p, q)
+            return self.solution(root.left, p, q)
         elif p.val > root.val and q.val > root.val:
-            return self.lowest_common_ancestor(root.right, p, q)
+            return self.solution(root.right, p, q)
         else:
             return root

@@ -63,7 +63,7 @@ class MajorityElementII:
         """
         tmp = {}
         res = []
-        for n in list(set(nums)):
+        for n in set(nums):
             tmp[n] = nums.count(n)
         for k, v in tmp.items():
             if v > len(nums) / 3:

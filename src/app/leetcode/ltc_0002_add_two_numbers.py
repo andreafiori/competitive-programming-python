@@ -24,12 +24,8 @@ Constraints:
     It is guaranteed that the list represents a number that does not have leading zeros.
 
 """
-from typing import Optional
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from app.common.list_node import ListNode
 
 class AddTwoNumbers:
     def solution(self, l1: ListNode, l2: ListNode) -> ListNode:

@@ -28,7 +28,8 @@ It's guaranteed that you can reach nums[n - 1].
 from typing import List
 
 class JumpGameII:
-    def jump(self, nums: List[int]) -> int:
+
+    def solution(self, nums: List[int]) -> int:
         """
         :type nums: List[int]
         :rtype: int

@@ -1,32 +1,30 @@
 """
 Contains Duplicate II | Leetcode 219 | Easy | https://leetcode.com/problems/contains-duplicate-ii/
+
+Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+
+Example 1:
+Input: nums = [1,2,3,1], k = 3
+Output: true
+
+Example 2:
+Input: nums = [1,0,1,1], k = 1
+Output: true
+
+Example 3:
+Input: nums = [1,2,3,1,2,3], k = 2
+Output: false
+
+Constraints:
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+0 <= k <= 105
+
 """
 
 class ContainsDuplicateII:
-    # def containsNearbyDuplicate(self, nums, k):
-    #     """
-    #     :type nums: List[int]
-    #     :type k: int
-    #     :rtype: bool
-    #     """
-    #     check = {}
-    #     for i in range(len(nums)):
-    #         try:
-    #             check[nums[i]].append(i)
-    #         except:
-    #             check[nums[i]] = [i]
-    #     # hash all value with its index
-    #     # then check the difference between indexes under the same value
-    #     for _, v in check.items():
-    #         if len(v) >= 2:
-    #             pos = 0
-    #             while pos + 1 < len(v):
-    #                 if v[pos + 1] - v[pos] <= k:
-    #                     return True
-    #                 pos += 1
-    #     return False
 
-    def containsNearbyDuplicate(self, nums, k):
+    def solution(self, nums, k):
         # check k interval
         check = set()
         for i in range(len(nums)):
@@ -37,4 +35,3 @@ class ContainsDuplicateII:
             else:
                 check.add(nums[i])
         return False
-

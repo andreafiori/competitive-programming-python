@@ -20,44 +20,25 @@ The number of nodes in the tree is in the range [1, 100].
 """
 
 from typing import Optional, List
+
 from app.common.tree_node import TreeNode
 
 class BinaryTreePath:
-    def solution_one(self, root: Optional[TreeNode]) -> List[str]:
-        def dfs(root, path):
-            if root is None:
-                return
 
-            if root.left is None and root.right is None:
-                path += str(root.val)
-                self.paths.append(path)
-                return
-
-            path += str(root.val) + '->'
-            dfs(root.left, path)
-            dfs(root.right, path)
-
-        self.paths = []
-        dfs(root, "")
-
-        return self.paths
-
-    # @param {TreeNode} root
-    # @return {string[]}
-    def binaryTreePaths(self, root):
+    def solution(self, root: Optional[TreeNode]) -> List[str]:
         if root is None:
             return []
         paths = []
-        self.get_path(paths, [], root)
+        self._get_path(paths, [], root)
         res = ['->'.join(p) for p in paths ]
         return res
 
-    def get_path(self, result, path, node):
+    def _get_path(self, result: List[List[str]], path: List[str], node: TreeNode):
         if node.left is None and node.right is None:
             result.append(path + [str(node.val)])
             return
         path = path + [str(node.val)]
         if node.left is not None:
-            self.get_path(result, path, node.left)
+            self._get_path(result, path, node.left)
         if node.right is not None:
-            self.get_path(result, path, node.right)
+            self._get_path(result, path, node.right)

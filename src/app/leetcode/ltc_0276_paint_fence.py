@@ -21,14 +21,10 @@ class PaintFence:
             return 0
         elif n == 1:
             return k
-        # two step dp
-        # ways[1] = k
-        # ways[2] = k * k
-        # ways[i>2] = (ways[i-1] + ways[i-2]) * (k - 1)
         dp = [0] * 2
         dp[0] = k
         dp[1] = k * k
-        for i in range(2, n):
+        for _ in range(2, n):
             temp = dp[1]
             dp[1] = sum(dp) * (k - 1)
             dp[0] = temp
